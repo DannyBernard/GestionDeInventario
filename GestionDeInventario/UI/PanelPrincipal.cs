@@ -24,5 +24,20 @@ namespace GestionDeInventario.UI
             mantenimeintoUsuario.Show();
             mantenimeintoUsuario.MdiParent = this;
         }
+
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantenimientoDeProducto mantenimientoDeProducto = new MantenimientoDeProducto();
+            mantenimientoDeProducto.Show();
+            mantenimientoDeProducto.MdiParent = this;
+        }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Compras compras = new Compras();
+            compras.Show();
+            compras.MdiParent = this;
+
+        }
     }
 }

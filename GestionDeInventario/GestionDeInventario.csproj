@@ -59,8 +59,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\Compras.cs" />
+    <Compile Include="Entidades\DetalleCompra.cs" />
+    <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="DAL\DataDB.cs" />
+    <Compile Include="UI\Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Compras.Designer.cs">
+      <DependentUpon>Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MantenimientoDeProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MantenimientoDeProducto.Designer.cs">
+      <DependentUpon>MantenimientoDeProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\MantenimientoDeUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +90,12 @@
     <Compile Include="UI\PanelPrincipal.Designer.cs">
       <DependentUpon>PanelPrincipal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Compras.resx">
+      <DependentUpon>Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MantenimientoDeProducto.resx">
+      <DependentUpon>MantenimientoDeProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\MantenimientoDeUsuario.resx">
       <DependentUpon>MantenimientoDeUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +113,7 @@
       <DependentUpon>PanelPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\GestionDeInventario.Entidades.DetalleCompra.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -134,6 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\new_add_user_16734.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-basket-add256_24909.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -26,7 +26,7 @@ namespace GestionDeInventario.Entidades
             Clave = string.Empty;
             TipoDeCuenta = false;
             Inactivo = 0;
-            FechaCreacion = DateTime.Now;
+            FechaCreacion =DateTime.Now;
 
         }
 
@@ -72,11 +72,11 @@ namespace GestionDeInventario.Entidades
             StringBuilder sql = new StringBuilder();
             MySqlConnection conn = getConnection();
             conn.Open();
-
-            sql.AppendFormat("UPDATE Usuario Set Nombres = '{0}', Cuenta='{1}', Clave='{2}',TipoDeCuenta={3},FechaDeCreacion= {4} WHERE CodigoUsuario = {5}", this.Nombres, this.Cuenta, this.Clave, this.TipoDeCuenta, this.FechaCreacion, this.CodigoUsuario); ;
             MySqlCommand sqlCommand;
             sqlCommand = new MySqlCommand();
-            sqlCommand.Connection = conn;
+           
+            sql.AppendFormat("UPDATE Usuario Set Nombres = '{0}', Cuenta='{1}', Clave='{2}',TipoDeCuenta={3} WHERE CodigoUsuario = {4}", this.Nombres, this.Cuenta, this.Clave, this.TipoDeCuenta, this.CodigoUsuario); 
+             sqlCommand.Connection = conn;
             sqlCommand.CommandType = System.Data.CommandType.Text;
             sqlCommand.CommandText = sql.ToString();
             if (sqlCommand.ExecuteNonQuery() > 0)

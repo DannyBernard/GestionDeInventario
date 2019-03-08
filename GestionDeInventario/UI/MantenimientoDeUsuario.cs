@@ -13,13 +13,14 @@ namespace GestionDeInventario
         }
         private Usuario LlenaClase()
         {
-
+           
             Usuario usuario = new Usuario();
             usuario.CodigoUsuario = Convert.ToInt32(numericUpDown1.Value);
             usuario.Nombres = NombretextBox.Text;
             usuario.Cuenta = CuentatextBox.Text;
             usuario.Clave = ClavetextBox.Text;
-            usuario.FechaCreacion =Convert.ToDateTime( dateTimePicker1.Value);
+            dateTimePicker1.CustomFormat = "yyy/MM/dd hh:mm:ss";
+            usuario.FechaCreacion = dateTimePicker1.Value;
             if (UsuarioradioButton.Checked)
             {
                 usuario.TipoDeCuenta = false;
@@ -38,7 +39,7 @@ namespace GestionDeInventario
             NombretextBox.Text = usuario.Nombres;
             CuentatextBox.Text = usuario.Cuenta;
             ClavetextBox.Text = usuario.Clave;
-            dateTimePicker1.Value = usuario.FechaCreacion;
+            dateTimePicker1.Value =Convert.ToDateTime( usuario.FechaCreacion);
             if (usuario.TipoDeCuenta == false)
             {
                 UsuarioradioButton.Checked = true;

@@ -159,5 +159,15 @@ namespace GestionDeInventario.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shopping_basket_add256_24909 {
+            get {
+                object obj = ResourceManager.GetObject("shopping-basket-add256_24909", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
