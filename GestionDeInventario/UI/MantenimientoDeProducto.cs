@@ -34,15 +34,15 @@ namespace GestionDeInventario.UI
             return producto;
         }
 
-        private void Llenacampo()
+        private void Llenacampo(Producto producto)
         {
-            Producto producto = new Producto();
+
             CodigonumericUpDown.Value = Convert.ToInt32(producto.CodigoProducto);
             DescripciontextBox.Text = producto.Descripcion;
-            CantidadnumericUpDown.Value =Convert.ToInt32( producto.Cantidad);
-            PrecionumericUpDown.Value = Convert.ToDecimal(producto.Precio);
-            comboBox1.Text = producto.Provedor;
-            FechadateTimePicker.Value = producto.FechaDeVencimiento;
+            CantidadnumericUpDown.Value = producto.Cantidad;
+            PrecionumericUpDown.Value =Convert.ToDecimal(producto.Precio);
+            comboBox1.Text =producto.Provedor;
+           // FechadateTimePicker.Value = producto.FechaDeVencimiento;
         }
         private void Nuevo()
         {
@@ -83,6 +83,19 @@ namespace GestionDeInventario.UI
             else
             {
                 MessageBox.Show("No se Pudo Guarar", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            Producto producto = new Producto();
+            BuscarProducto buscarp = new BuscarProducto();
+            buscarp.ShowDialog();
+            if (buscarp.Productoselec != null)
+            {
+                int id = buscarp.Productoselec.CodigoProducto;
+                producto.Buscarp(id);
+                Llenacampo(producto);
             }
         }
     }

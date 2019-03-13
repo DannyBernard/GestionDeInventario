@@ -33,10 +33,11 @@
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreNosotrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlDeInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,10 +85,18 @@
             // herramientasToolStripMenuItem
             // 
             this.herramientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.comprasToolStripMenuItem});
+            this.comprasToolStripMenuItem,
+            this.controlDeInventarioToolStripMenuItem});
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
             this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
             this.herramientasToolStripMenuItem.Text = "Herramientas";
+            // 
+            // comprasToolStripMenuItem
+            // 
+            this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.comprasToolStripMenuItem.Text = "Compras";
+            this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
             // 
             // repotesToolStripMenuItem
             // 
@@ -107,12 +116,12 @@
             this.sobreNosotrosToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
             this.sobreNosotrosToolStripMenuItem.Text = "SobreNosotros";
             // 
-            // comprasToolStripMenuItem
+            // controlDeInventarioToolStripMenuItem
             // 
-            this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.comprasToolStripMenuItem.Text = "Compras";
-            this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
+            this.controlDeInventarioToolStripMenuItem.Name = "controlDeInventarioToolStripMenuItem";
+            this.controlDeInventarioToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.controlDeInventarioToolStripMenuItem.Text = "Control De Inventario";
+            this.controlDeInventarioToolStripMenuItem.Click += new System.EventHandler(this.controlDeInventarioToolStripMenuItem_Click);
             // 
             // PanelPrincipal
             // 
@@ -141,5 +150,6 @@
         private System.Windows.Forms.ToolStripMenuItem sobreNosotrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlDeInventarioToolStripMenuItem;
     }
 }

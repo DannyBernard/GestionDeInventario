@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.codigoComprasProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoDeProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDeVenciminetoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalleCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.FechaDeHoydateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,9 +49,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.OrdennumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.CostonumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.FechaVencdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,24 +59,17 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Addbutton = new System.Windows.Forms.Button();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.CodigoCompranumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.codigoComprasProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoDeProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDeVenciminetoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalleCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigoDelSuplidornumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigoProductonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrdennumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CodigoCompranumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -89,6 +89,46 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(843, 263);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // codigoComprasProductoDataGridViewTextBoxColumn
+            // 
+            this.codigoComprasProductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoComprasProducto";
+            this.codigoComprasProductoDataGridViewTextBoxColumn.HeaderText = "CodigoComprasProducto";
+            this.codigoComprasProductoDataGridViewTextBoxColumn.Name = "codigoComprasProductoDataGridViewTextBoxColumn";
+            // 
+            // codigoDeProductoDataGridViewTextBoxColumn
+            // 
+            this.codigoDeProductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoDeProducto";
+            this.codigoDeProductoDataGridViewTextBoxColumn.HeaderText = "CodigoDeProducto";
+            this.codigoDeProductoDataGridViewTextBoxColumn.Name = "codigoDeProductoDataGridViewTextBoxColumn";
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            // 
+            // costoDataGridViewTextBoxColumn
+            // 
+            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
+            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
+            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
+            // 
+            // fechaDeVenciminetoDataGridViewTextBoxColumn
+            // 
+            this.fechaDeVenciminetoDataGridViewTextBoxColumn.DataPropertyName = "FechaDeVencimineto";
+            this.fechaDeVenciminetoDataGridViewTextBoxColumn.HeaderText = "FechaDeVencimineto";
+            this.fechaDeVenciminetoDataGridViewTextBoxColumn.Name = "fechaDeVenciminetoDataGridViewTextBoxColumn";
+            // 
+            // detalleCompraBindingSource
+            // 
+            this.detalleCompraBindingSource.DataSource = typeof(GestionDeInventario.Entidades.DetalleCompra);
             // 
             // label1
             // 
@@ -188,12 +228,12 @@
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.CantidadnumericUpDown.TabIndex = 12;
             // 
-            // numericUpDown1
+            // OrdennumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(659, 105);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 14;
+            this.OrdennumericUpDown.Location = new System.Drawing.Point(659, 105);
+            this.OrdennumericUpDown.Name = "OrdennumericUpDown";
+            this.OrdennumericUpDown.Size = new System.Drawing.Size(120, 22);
+            this.OrdennumericUpDown.TabIndex = 14;
             // 
             // label7
             // 
@@ -204,12 +244,12 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "No. Orden";
             // 
-            // numericUpDown2
+            // CostonumericUpDown
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(124, 221);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(97, 22);
-            this.numericUpDown2.TabIndex = 16;
+            this.CostonumericUpDown.Location = new System.Drawing.Point(124, 221);
+            this.CostonumericUpDown.Name = "CostonumericUpDown";
+            this.CostonumericUpDown.Size = new System.Drawing.Size(97, 22);
+            this.CostonumericUpDown.TabIndex = 16;
             // 
             // label8
             // 
@@ -280,12 +320,12 @@
             this.Addbutton.UseVisualStyleBackColor = true;
             this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
             // 
-            // numericUpDown3
+            // CodigoCompranumericUpDown
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(127, 38);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(97, 22);
-            this.numericUpDown3.TabIndex = 24;
+            this.CodigoCompranumericUpDown.Location = new System.Drawing.Point(127, 38);
+            this.CodigoCompranumericUpDown.Name = "CodigoCompranumericUpDown";
+            this.CodigoCompranumericUpDown.Size = new System.Drawing.Size(97, 22);
+            this.CodigoCompranumericUpDown.TabIndex = 24;
             // 
             // label10
             // 
@@ -308,53 +348,13 @@
             this.Buscarbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             // 
-            // codigoComprasProductoDataGridViewTextBoxColumn
-            // 
-            this.codigoComprasProductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoComprasProducto";
-            this.codigoComprasProductoDataGridViewTextBoxColumn.HeaderText = "CodigoComprasProducto";
-            this.codigoComprasProductoDataGridViewTextBoxColumn.Name = "codigoComprasProductoDataGridViewTextBoxColumn";
-            // 
-            // codigoDeProductoDataGridViewTextBoxColumn
-            // 
-            this.codigoDeProductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoDeProducto";
-            this.codigoDeProductoDataGridViewTextBoxColumn.HeaderText = "CodigoDeProducto";
-            this.codigoDeProductoDataGridViewTextBoxColumn.Name = "codigoDeProductoDataGridViewTextBoxColumn";
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            // 
-            // costoDataGridViewTextBoxColumn
-            // 
-            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
-            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
-            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
-            // 
-            // fechaDeVenciminetoDataGridViewTextBoxColumn
-            // 
-            this.fechaDeVenciminetoDataGridViewTextBoxColumn.DataPropertyName = "FechaDeVencimineto";
-            this.fechaDeVenciminetoDataGridViewTextBoxColumn.HeaderText = "FechaDeVencimineto";
-            this.fechaDeVenciminetoDataGridViewTextBoxColumn.Name = "fechaDeVenciminetoDataGridViewTextBoxColumn";
-            // 
-            // detalleCompraBindingSource
-            // 
-            this.detalleCompraBindingSource.DataSource = typeof(GestionDeInventario.Entidades.DetalleCompra);
-            // 
             // Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(867, 689);
             this.Controls.Add(this.Buscarbutton);
-            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.CodigoCompranumericUpDown);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.Addbutton);
             this.Controls.Add(this.Eliminarbutton);
@@ -362,9 +362,9 @@
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.FechaVencdateTimePicker);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.CostonumericUpDown);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.OrdennumericUpDown);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.CantidadnumericUpDown);
             this.Controls.Add(this.label6);
@@ -382,13 +382,13 @@
             this.Name = "Compras";
             this.Text = "Compras";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigoDelSuplidornumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigoProductonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrdennumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CodigoCompranumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,9 +409,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown OrdennumericUpDown;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown CostonumericUpDown;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker FechaVencdateTimePicker;
         private System.Windows.Forms.Label label9;
@@ -419,7 +419,7 @@
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Addbutton;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown CodigoCompranumericUpDown;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoComprasProductoDataGridViewTextBoxColumn;

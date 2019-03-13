@@ -38,22 +38,24 @@
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.PrecionumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Addbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.CodigonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 68);
+            this.label1.Location = new System.Drawing.Point(22, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 17);
             this.label1.TabIndex = 0;
@@ -97,7 +99,7 @@
             // 
             // CodigonumericUpDown
             // 
-            this.CodigonumericUpDown.Location = new System.Drawing.Point(178, 68);
+            this.CodigonumericUpDown.Location = new System.Drawing.Point(178, 77);
             this.CodigonumericUpDown.Name = "CodigonumericUpDown";
             this.CodigonumericUpDown.Size = new System.Drawing.Size(85, 22);
             this.CodigonumericUpDown.TabIndex = 5;
@@ -133,37 +135,6 @@
             this.FechadateTimePicker.Size = new System.Drawing.Size(285, 22);
             this.FechadateTimePicker.TabIndex = 9;
             // 
-            // Nuevobutton
-            // 
-            this.Nuevobutton.Location = new System.Drawing.Point(60, 385);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(75, 73);
-            this.Nuevobutton.TabIndex = 10;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
-            // 
-            // Guardarbutton
-            // 
-            this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Guardarbutton.ForeColor = System.Drawing.SystemColors.Control;
-            this.Guardarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_guardar_501;
-            this.Guardarbutton.Location = new System.Drawing.Point(235, 385);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(75, 73);
-            this.Guardarbutton.TabIndex = 11;
-            this.Guardarbutton.UseVisualStyleBackColor = true;
-            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
-            // 
-            // Eliminarbutton
-            // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(392, 385);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(75, 73);
-            this.Eliminarbutton.TabIndex = 12;
-            this.Eliminarbutton.Text = "Eliminar";
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -192,25 +163,73 @@
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(363, 61);
+            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buscarbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Buscarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_búsqueda_501;
+            this.Buscarbutton.Location = new System.Drawing.Point(348, 59);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(100, 35);
+            this.Buscarbutton.Size = new System.Drawing.Size(100, 52);
             this.Buscarbutton.TabIndex = 16;
-            this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // Eliminarbutton
+            // 
+            this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Eliminarbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Eliminarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_eliminar_vista_501;
+            this.Eliminarbutton.Location = new System.Drawing.Point(351, 21);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(75, 73);
+            this.Eliminarbutton.TabIndex = 12;
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            // 
+            // Guardarbutton
+            // 
+            this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Guardarbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Guardarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_guardar_501;
+            this.Guardarbutton.Location = new System.Drawing.Point(173, 21);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(75, 73);
+            this.Guardarbutton.TabIndex = 11;
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Nuevobutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Nuevobutton.Image = global::GestionDeInventario.Properties.Resources.icons8_agregar_propiedad_501;
+            this.Nuevobutton.Location = new System.Drawing.Point(6, 21);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(75, 73);
+            this.Nuevobutton.TabIndex = 10;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Nuevobutton);
+            this.groupBox1.Controls.Add(this.Guardarbutton);
+            this.groupBox1.Controls.Add(this.Eliminarbutton);
+            this.groupBox1.Location = new System.Drawing.Point(41, 358);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(441, 100);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Botones";
             // 
             // MantenimientoDeProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 470);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Addbutton);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.Eliminarbutton);
-            this.Controls.Add(this.Guardarbutton);
-            this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.PrecionumericUpDown);
             this.Controls.Add(this.CantidadnumericUpDown);
@@ -226,6 +245,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CodigonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,5 +270,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button Addbutton;
         private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

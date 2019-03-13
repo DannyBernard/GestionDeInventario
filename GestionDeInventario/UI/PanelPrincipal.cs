@@ -39,5 +39,11 @@ namespace GestionDeInventario.UI
             compras.MdiParent = this;
 
         }
+
+        private void controlDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Controliventario controiventario = new Controliventario();
+            controiventario.Show();
+        }
     }
 }

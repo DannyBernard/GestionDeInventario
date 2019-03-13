@@ -19,15 +19,19 @@ namespace GestionDeInventario.Entidades
         public string Provedor { get; set; }
         public DateTime FechaDeVencimiento { get; set; }
 
+        public Producto(int codigoProducto, string descripcion, int cantidad, float precio, string provedor, DateTime fechaDeVencimiento)
+        {
+           this.CodigoProducto = codigoProducto;
+            this.Descripcion = descripcion;
+            this.Cantidad = cantidad;
+            this.Precio = precio;
+            this.Provedor = provedor;
+           this. FechaDeVencimiento = fechaDeVencimiento;
+        }
 
         public Producto()
         {
-            CodigoProducto = 0;
-            Descripcion = string.Empty;
-            Cantidad = 0;
-            Precio = 0;
-            Provedor = string.Empty;
-            FechaDeVencimiento = DateTime.Now;
+            
 
         }
 
@@ -49,33 +53,34 @@ namespace GestionDeInventario.Entidades
         public bool Crear()
         {
             bool paso = false;
-           // try
-           // {
-             
-                MySqlCommand command;
-                String sqlInsert = "insert into Producto(CodigoProducto,Descripcion,Cantidad,Precio,Provedor,FechaVencimiento,Inactivo) values (@codigo,@descripcion,@cantidad,@precio,@provedor,@fechavenc,@Inactivo)";
-                MySqlConnection conn = getConnection();
-                conn.Open();
-                command = new MySqlCommand(sqlInsert, conn);
-                command.Parameters.AddWithValue("@codigo", this.CodigoProducto);
-                command.Parameters.AddWithValue("@descripcion", this.Descripcion);
-                command.Parameters.AddWithValue("@cantidad", this.Cantidad);
-                command.Parameters.AddWithValue("@precio", this.Precio);
-                command.Parameters.AddWithValue("@provedor",this.Provedor);
-                command.Parameters.AddWithValue("@fechavenc", this.FechaDeVencimiento);
-                command.Parameters.AddWithValue("@Inactivo", Convert.ToByte(0));
-                command.Prepare();
-                MySqlDataReader dataReader = command.ExecuteReader();
-                paso = dataReader.RecordsAffected > 0;
-                return paso = true;
-           // }
+            // try
+            // {
+
+            MySqlCommand command;
+            String sqlInsert = "insert into Producto(CodigoProducto,Descripcion,Cantidad,Precio,Provedor,FechaVencimiento,Inactivo) values (@codigo,@descripcion,@cantidad,@precio,@provedor,@fechavenc,@Inactivo)";
+            MySqlConnection conn = getConnection();
+            conn.Open();
+            command = new MySqlCommand(sqlInsert, conn);
+            command.Parameters.AddWithValue("@codigo", this.CodigoProducto);
+            command.Parameters.AddWithValue("@descripcion", this.Descripcion);
+            command.Parameters.AddWithValue("@cantidad", this.Cantidad);
+            command.Parameters.AddWithValue("@precio", this.Precio);
+            command.Parameters.AddWithValue("@provedor", this.Provedor);
+            command.Parameters.AddWithValue("@fechavenc", this.FechaDeVencimiento);
+            command.Parameters.AddWithValue("@Inactivo", Convert.ToByte(0));
+            command.Prepare();
+            MySqlDataReader dataReader = command.ExecuteReader();
+            paso = dataReader.RecordsAffected > 0;
+            conn.Close();
+            return paso = true;
+            // }
             /*
             catch (Exception e)
             {
                 Console.Write(e.Message);
             }
             */
-          //  return paso = true;
+            //  return paso = true;
         }
 
         public bool Modificar()
@@ -130,13 +135,13 @@ namespace GestionDeInventario.Entidades
                     this.FechaDeVencimiento = Convert.ToDateTime(dataReader["FechaDeVencimiento"]);
                 }
                 conn.Close();
-                return this; 
+                return this;
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
             }
-            return null; 
+            return null;
 
         }
 
@@ -172,8 +177,55 @@ namespace GestionDeInventario.Entidades
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             DataTable data = new DataTable();
             adapter.Fill(data);
+
+
+        }
+        public List<Producto> BuscarL()
+        {
+            List<Producto> lista = new List<Producto>();
+            MySqlConnection conn = getConnection();
+            conn.Open();
+           
+            MySqlCommand command;
+            command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Cantidad, Precio, Provedor, FechaVencimiento FROM Producto "), conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while(reader.Read())
+            {
+                Producto producto = new Producto();
+                    producto.CodigoProducto = reader.GetInt32(0);
+                    producto.Descripcion = reader.GetString(1);
+                    producto.Precio = reader.GetFloat(2);
+                    producto.Cantidad = reader.GetInt32(3);
+                    producto.Provedor = reader.GetString(4);
+                    producto.FechaDeVencimiento = reader.GetDateTime(5);
+                    
+                    lista.Add(producto);
+                
+        }
+            conn.Close();
+            return lista;
+            
+        }
+        public Producto Buscarp(int id)
+        {
+            MySqlConnection conn = getConnection();
+            conn.Open();
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Cantidad, Precio, Provedor, FechaVencimiento FROM Producto WHERE CodigoProducto={0}",id),conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+
+                this.CodigoProducto = reader.GetInt32(0);
+                this.Descripcion = reader.GetString(1);
+                this.Precio = reader.GetFloat(2);
+                this.Cantidad = reader.GetInt32(3);
+                this.Provedor = reader.GetString(4);
+                this.FechaDeVencimiento = reader.GetDateTime(5);
             
 
+            }
+            conn.Close();
+            return this;
         }
     }
 }
