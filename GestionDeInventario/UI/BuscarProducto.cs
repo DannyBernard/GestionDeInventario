@@ -40,5 +40,10 @@ namespace GestionDeInventario.UI
                 this.Close();
            }
         }
+
+        private void Cancbutton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace GestionDeInventario.UI
         public MantenimientoDeProducto()
         {
             InitializeComponent();
-            CargarCombo();
+            CargarCombo(comboBox1);
         }
 
        private Producto LlenaClase()
@@ -53,31 +53,36 @@ namespace GestionDeInventario.UI
             FechadateTimePicker.Value = DateTime.Now;
         }
 
-        public void CargarCombo()
+      
+        public void CargarCombo(ComboBox comboBox)
         {
-          string  StrConnection = "Initial Catalog= ProyectoAplicado_1_2019; datasource=localhost;port =3306;username = danny; password=1515";
+            string StrConnection = "Initial Catalog= ProyectoAplicado_1_2019; datasource=localhost;port =3306;username = danny; password=1515";
 
             MySqlConnection conn = new MySqlConnection(StrConnection);
             StringBuilder sql = new StringBuilder();
-            sql.AppendFormat("SELECT CodigoProducto,Descripcion FROM Producto");
+            sql.AppendFormat("SELECT CodigoProvedor,NombreDeLaEmpresa FROM Provedores");
             MySqlCommand command = new MySqlCommand(sql.ToString(), conn);
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             DataTable data = new DataTable();
             adapter.Fill(data);
 
-
+            comboBox.ValueMember = "CodigoProvedor";
+            comboBox.DisplayMember = "NombreDeLaEmpresa";
+            comboBox.DataSource = data;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Nuevo();
         }
+        
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Producto producto;
             if (LlenaClase().Guardar())
             {
+                Nuevo();
                 MessageBox.Show("Guadado con Exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -98,5 +103,26 @@ namespace GestionDeInventario.UI
                 Llenacampo(producto);
             }
         }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        { 
+                Producto producto = new Producto();
+                producto.CodigoProducto = Convert.ToInt32(CodigonumericUpDown.Value);
+                producto.Eliminar();
+                Nuevo();
+                MessageBox.Show("Elimino con Exito");
+           
+            
+        }
+
+
+        private void Addbutton_Click(object sender, EventArgs e)
+        {
+            MantenimientoProvedores mantenimiento = new MantenimientoProvedores();
+            mantenimiento.ShowDialog();
+            CargarCombo(comboBox1);
+        }
+
+        
     }
 }

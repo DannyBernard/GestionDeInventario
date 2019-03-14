@@ -40,12 +40,12 @@
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Addbutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.Addbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CodigonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
@@ -114,6 +114,11 @@
             // CantidadnumericUpDown
             // 
             this.CantidadnumericUpDown.Location = new System.Drawing.Point(178, 214);
+            this.CantidadnumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(102, 22);
             this.CantidadnumericUpDown.TabIndex = 7;
@@ -122,6 +127,11 @@
             // 
             this.PrecionumericUpDown.DecimalPlaces = 2;
             this.PrecionumericUpDown.Location = new System.Drawing.Point(373, 214);
+            this.PrecionumericUpDown.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.PrecionumericUpDown.Name = "PrecionumericUpDown";
             this.PrecionumericUpDown.Size = new System.Drawing.Size(94, 22);
             this.PrecionumericUpDown.TabIndex = 8;
@@ -152,37 +162,29 @@
             this.comboBox1.Size = new System.Drawing.Size(204, 24);
             this.comboBox1.TabIndex = 14;
             // 
-            // Addbutton
+            // groupBox1
             // 
-            this.Addbutton.Location = new System.Drawing.Point(388, 264);
-            this.Addbutton.Name = "Addbutton";
-            this.Addbutton.Size = new System.Drawing.Size(75, 23);
-            this.Addbutton.TabIndex = 15;
-            this.Addbutton.Text = "Add";
-            this.Addbutton.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.Nuevobutton);
+            this.groupBox1.Controls.Add(this.Guardarbutton);
+            this.groupBox1.Controls.Add(this.Eliminarbutton);
+            this.groupBox1.Location = new System.Drawing.Point(41, 358);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(441, 100);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Botones";
             // 
-            // Buscarbutton
+            // Nuevobutton
             // 
-            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buscarbutton.ForeColor = System.Drawing.SystemColors.Control;
-            this.Buscarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_búsqueda_501;
-            this.Buscarbutton.Location = new System.Drawing.Point(348, 59);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(100, 52);
-            this.Buscarbutton.TabIndex = 16;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
-            // 
-            // Eliminarbutton
-            // 
-            this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminarbutton.ForeColor = System.Drawing.SystemColors.Control;
-            this.Eliminarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_eliminar_vista_501;
-            this.Eliminarbutton.Location = new System.Drawing.Point(351, 21);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(75, 73);
-            this.Eliminarbutton.TabIndex = 12;
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Nuevobutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Nuevobutton.Image = global::GestionDeInventario.Properties.Resources.icons8_agregar_propiedad_501;
+            this.Nuevobutton.Location = new System.Drawing.Point(24, 21);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(75, 73);
+            this.Nuevobutton.TabIndex = 10;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Guardarbutton
             // 
@@ -196,29 +198,41 @@
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
-            // Nuevobutton
+            // Eliminarbutton
             // 
-            this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Nuevobutton.ForeColor = System.Drawing.SystemColors.Control;
-            this.Nuevobutton.Image = global::GestionDeInventario.Properties.Resources.icons8_agregar_propiedad_501;
-            this.Nuevobutton.Location = new System.Drawing.Point(6, 21);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(75, 73);
-            this.Nuevobutton.TabIndex = 10;
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Eliminarbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Eliminarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_eliminar_vista_501;
+            this.Eliminarbutton.Location = new System.Drawing.Point(347, 21);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(75, 73);
+            this.Eliminarbutton.TabIndex = 12;
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
-            // groupBox1
+            // Buscarbutton
             // 
-            this.groupBox1.Controls.Add(this.Nuevobutton);
-            this.groupBox1.Controls.Add(this.Guardarbutton);
-            this.groupBox1.Controls.Add(this.Eliminarbutton);
-            this.groupBox1.Location = new System.Drawing.Point(41, 358);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(441, 100);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Botones";
+            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buscarbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Buscarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_búsqueda_501;
+            this.Buscarbutton.Location = new System.Drawing.Point(335, 53);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(100, 65);
+            this.Buscarbutton.TabIndex = 16;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // Addbutton
+            // 
+            this.Addbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Addbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Addbutton.Image = global::GestionDeInventario.Properties.Resources.add_file;
+            this.Addbutton.Location = new System.Drawing.Point(392, 253);
+            this.Addbutton.Name = "Addbutton";
+            this.Addbutton.Size = new System.Drawing.Size(75, 45);
+            this.Addbutton.TabIndex = 15;
+            this.Addbutton.UseVisualStyleBackColor = true;
+            this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
             // 
             // MantenimientoDeProducto
             // 

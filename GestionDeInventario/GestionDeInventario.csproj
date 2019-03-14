@@ -63,6 +63,7 @@
     <Compile Include="Entidades\DetalleCompra.cs" />
     <Compile Include="Entidades\DetalleIventario.cs" />
     <Compile Include="Entidades\Producto.cs" />
+    <Compile Include="Entidades\Provedores.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="DAL\DataDB.cs" />
     <Compile Include="UI\BuscarProducto.cs">
@@ -71,11 +72,23 @@
     <Compile Include="UI\BuscarProducto.Designer.cs">
       <DependentUpon>BuscarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\BuscarProvedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BuscarProvedor.Designer.cs">
+      <DependentUpon>BuscarProvedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Compras.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Compras.Designer.cs">
       <DependentUpon>Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlIvenariocs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ControlIvenariocs.Designer.cs">
+      <DependentUpon>ControlIvenariocs.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\MantenimientoDeProducto.cs">
       <SubType>Form</SubType>
@@ -91,6 +104,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\MantenimientoProvedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MantenimientoProvedores.Designer.cs">
+      <DependentUpon>MantenimientoProvedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\PanelPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,8 +119,14 @@
     <EmbeddedResource Include="UI\BuscarProducto.resx">
       <DependentUpon>BuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\BuscarProvedor.resx">
+      <DependentUpon>BuscarProvedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlIvenariocs.resx">
+      <DependentUpon>ControlIvenariocs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MantenimientoDeProducto.resx">
       <DependentUpon>MantenimientoDeProducto.cs</DependentUpon>
@@ -119,6 +144,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\MantenimientoProvedores.resx">
+      <DependentUpon>MantenimientoProvedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\PanelPrincipal.resx">
       <DependentUpon>PanelPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +211,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Accept256_25070.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_icon-icons.com_73703.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

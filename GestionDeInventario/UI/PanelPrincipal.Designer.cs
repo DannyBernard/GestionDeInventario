@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mantenimeintoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreNosotrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlDeInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimeintoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.provedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,32 +57,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // mantenimeintoToolStripMenuItem
-            // 
-            this.mantenimeintoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuarioToolStripMenuItem,
-            this.productoToolStripMenuItem});
-            this.mantenimeintoToolStripMenuItem.Image = global::GestionDeInventario.Properties.Resources.new_add_user_16734;
-            this.mantenimeintoToolStripMenuItem.Name = "mantenimeintoToolStripMenuItem";
-            this.mantenimeintoToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.mantenimeintoToolStripMenuItem.Text = "Mantenimeinto";
-            // 
-            // usuarioToolStripMenuItem
-            // 
-            this.usuarioToolStripMenuItem.Image = global::GestionDeInventario.Properties.Resources.new_add_user_info_167061;
-            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
-            this.usuarioToolStripMenuItem.Text = "Usuario";
-            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
-            // 
-            // productoToolStripMenuItem
-            // 
-            this.productoToolStripMenuItem.Image = global::GestionDeInventario.Properties.Resources.shopping_basket_add256_24909;
-            this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
-            this.productoToolStripMenuItem.Text = "Producto";
-            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
-            // 
             // herramientasToolStripMenuItem
             // 
             this.herramientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -94,7 +69,7 @@
             // comprasToolStripMenuItem
             // 
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.comprasToolStripMenuItem.Text = "Compras";
             this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
             // 
@@ -119,9 +94,44 @@
             // controlDeInventarioToolStripMenuItem
             // 
             this.controlDeInventarioToolStripMenuItem.Name = "controlDeInventarioToolStripMenuItem";
-            this.controlDeInventarioToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
-            this.controlDeInventarioToolStripMenuItem.Text = "Control De Inventario";
-            this.controlDeInventarioToolStripMenuItem.Click += new System.EventHandler(this.controlDeInventarioToolStripMenuItem_Click);
+            this.controlDeInventarioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.controlDeInventarioToolStripMenuItem.Text = "Control de Inventario";
+            this.controlDeInventarioToolStripMenuItem.Click += new System.EventHandler(this.controlDeInventarioToolStripMenuItem_Click_1);
+            // 
+            // mantenimeintoToolStripMenuItem
+            // 
+            this.mantenimeintoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuarioToolStripMenuItem,
+            this.productoToolStripMenuItem,
+            this.provedoresToolStripMenuItem});
+            this.mantenimeintoToolStripMenuItem.Image = global::GestionDeInventario.Properties.Resources.new_add_user_16734;
+            this.mantenimeintoToolStripMenuItem.Name = "mantenimeintoToolStripMenuItem";
+            this.mantenimeintoToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.mantenimeintoToolStripMenuItem.Text = "Mantenimeinto";
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.Image = global::GestionDeInventario.Properties.Resources.new_add_user_info_167061;
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
+            // 
+            // productoToolStripMenuItem
+            // 
+            this.productoToolStripMenuItem.Image = global::GestionDeInventario.Properties.Resources.shopping_basket_add256_24909;
+            this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.productoToolStripMenuItem.Text = "Producto";
+            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
+            // 
+            // provedoresToolStripMenuItem
+            // 
+            this.provedoresToolStripMenuItem.Image = global::GestionDeInventario.Properties.Resources.new_add_user_info_16706;
+            this.provedoresToolStripMenuItem.Name = "provedoresToolStripMenuItem";
+            this.provedoresToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.provedoresToolStripMenuItem.Text = "Provedores";
+            this.provedoresToolStripMenuItem.Click += new System.EventHandler(this.provedoresToolStripMenuItem_Click);
             // 
             // PanelPrincipal
             // 
@@ -151,5 +161,6 @@
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem controlDeInventarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem provedoresToolStripMenuItem;
     }
 }

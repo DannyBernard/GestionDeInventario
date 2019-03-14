@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using GestionDeInventario.MisClases;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace GestionDeInventario.Entidades
 {
@@ -21,17 +22,17 @@ namespace GestionDeInventario.Entidades
 
         public Producto(int codigoProducto, string descripcion, int cantidad, float precio, string provedor, DateTime fechaDeVencimiento)
         {
-           this.CodigoProducto = codigoProducto;
+            this.CodigoProducto = codigoProducto;
             this.Descripcion = descripcion;
             this.Cantidad = cantidad;
             this.Precio = precio;
             this.Provedor = provedor;
-           this. FechaDeVencimiento = fechaDeVencimiento;
+            this.FechaDeVencimiento = fechaDeVencimiento;
         }
 
         public Producto()
         {
-            
+
 
         }
 
@@ -92,7 +93,7 @@ namespace GestionDeInventario.Entidades
                 MySqlConnection conn = getConnection();
                 conn.Open();
                 MySqlCommand mySqlCommand = new MySqlCommand();
-                stringBuilder.AppendFormat("UPDATE Producto SET Descripcion ='{0}',Cantidad = {1},Precio ={2},Provedor = '{3}'");
+                stringBuilder.AppendFormat("UPDATE Producto SET Descripcion ='{0}',Cantidad = {1},Precio ={2},Provedor = '{3}'where CodigoProducto={4}", this.Descripcion, this.Cantidad, this.Precio, this.Provedor, this.CodigoProducto);
                 mySqlCommand.Connection = conn;
                 mySqlCommand.CommandText = stringBuilder.ToString();
                 if (mySqlCommand.ExecuteNonQuery() > 0)
@@ -153,7 +154,7 @@ namespace GestionDeInventario.Entidades
                 StringBuilder stringBuilder = new StringBuilder();
                 MySqlConnection conn = getConnection();
                 conn.Open();
-                stringBuilder.AppendFormat("UPDATE Producto SET Inactvo = 1 WHERE CodigoProducto = {0}", this.CodigoProducto);
+                stringBuilder.AppendFormat("UPDATE Producto SET Inactivo = 1 WHERE CodigoProducto = {0}", this.CodigoProducto);
                 MySqlCommand command = new MySqlCommand();
                 command.Connection = conn;
                 command.CommandType = System.Data.CommandType.Text;
@@ -185,32 +186,32 @@ namespace GestionDeInventario.Entidades
             List<Producto> lista = new List<Producto>();
             MySqlConnection conn = getConnection();
             conn.Open();
-           
+
             MySqlCommand command;
-            command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Cantidad, Precio, Provedor, FechaVencimiento FROM Producto "), conn);
+            command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Cantidad, Precio, Provedor, FechaVencimiento FROM Producto where Inactivo <>1"), conn);
             MySqlDataReader reader = command.ExecuteReader();
-            while(reader.Read())
+            while (reader.Read())
             {
                 Producto producto = new Producto();
-                    producto.CodigoProducto = reader.GetInt32(0);
-                    producto.Descripcion = reader.GetString(1);
-                    producto.Precio = reader.GetFloat(2);
-                    producto.Cantidad = reader.GetInt32(3);
-                    producto.Provedor = reader.GetString(4);
-                    producto.FechaDeVencimiento = reader.GetDateTime(5);
-                    
-                    lista.Add(producto);
-                
-        }
+                producto.CodigoProducto = reader.GetInt32(0);
+                producto.Descripcion = reader.GetString(1);
+                producto.Precio = reader.GetFloat(3);
+                producto.Cantidad = reader.GetInt32(2);
+                producto.Provedor = reader.GetString(4);
+                producto.FechaDeVencimiento = reader.GetDateTime(5);
+
+                lista.Add(producto);
+
+            }
             conn.Close();
             return lista;
-            
+
         }
         public Producto Buscarp(int id)
         {
             MySqlConnection conn = getConnection();
             conn.Open();
-            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Cantidad, Precio, Provedor, FechaVencimiento FROM Producto WHERE CodigoProducto={0}",id),conn);
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Cantidad, Precio, Provedor, FechaVencimiento FROM Producto WHERE CodigoProducto={0}", id), conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -221,11 +222,23 @@ namespace GestionDeInventario.Entidades
                 this.Cantidad = reader.GetInt32(3);
                 this.Provedor = reader.GetString(4);
                 this.FechaDeVencimiento = reader.GetDateTime(5);
-            
+
 
             }
             conn.Close();
             return this;
+        }
+        public void CargarCombo(ComboBox combo)
+        {
+            MySqlConnection conn = getConnection();
+            StringBuilder sql = new StringBuilder();
+            sql.AppendFormat("SELECT CodigoProvedor,NombreDeLaEmpresa FROM Provedores");
+            MySqlCommand command = new MySqlCommand(sql.ToString(), conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+
+
         }
     }
 }

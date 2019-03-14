@@ -40,10 +40,20 @@ namespace GestionDeInventario.UI
 
         }
 
-        private void controlDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+     
+
+        private void controlDeInventarioToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Controliventario controiventario = new Controliventario();
-            controiventario.Show();
+            ControlIvenariocs controlIvenariocs = new ControlIvenariocs();
+            controlIvenariocs.Show();
+
+        }
+
+        private void provedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantenimientoProvedores mantenimientoProvedores = new MantenimientoProvedores();
+            mantenimientoProvedores.Show();
+            mantenimientoProvedores.MdiParent = this;
         }
     }
 }
