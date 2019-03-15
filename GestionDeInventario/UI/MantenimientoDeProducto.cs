@@ -18,7 +18,7 @@ namespace GestionDeInventario.UI
         public MantenimientoDeProducto()
         {
             InitializeComponent();
-            CargarCombo(comboBox1);
+            CargarCombo(ProvedorcomboBox);
         }
 
        private Producto LlenaClase()
@@ -30,7 +30,7 @@ namespace GestionDeInventario.UI
             producto.Cantidad = Convert.ToInt32(CantidadnumericUpDown.Value);
             producto.Precio = Convert.ToSingle(PrecionumericUpDown.Value);
             producto.FechaDeVencimiento = Convert.ToDateTime(FechadateTimePicker.Value);
-            producto.Provedor = Convert.ToString(comboBox1.Text);
+            producto.Provedor = Convert.ToString(ProvedorcomboBox.Text);
             return producto;
         }
 
@@ -41,7 +41,7 @@ namespace GestionDeInventario.UI
             DescripciontextBox.Text = producto.Descripcion;
             CantidadnumericUpDown.Value = producto.Cantidad;
             PrecionumericUpDown.Value =Convert.ToDecimal(producto.Precio);
-            comboBox1.Text =producto.Provedor;
+            ProvedorcomboBox.Text =producto.Provedor;
            // FechadateTimePicker.Value = producto.FechaDeVencimiento;
         }
         private void Nuevo()
@@ -79,6 +79,11 @@ namespace GestionDeInventario.UI
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+            if (Validar())
+            {
+                MessageBox.Show("Revise los campos");
+                return;
+            }
             Producto producto;
             if (LlenaClase().Guardar())
             {
@@ -120,9 +125,42 @@ namespace GestionDeInventario.UI
         {
             MantenimientoProvedores mantenimiento = new MantenimientoProvedores();
             mantenimiento.ShowDialog();
-            CargarCombo(comboBox1);
+            CargarCombo(ProvedorcomboBox);
+        }
+        private bool Validar()
+        {
+            bool paso = false;
+            if (String.IsNullOrWhiteSpace(DescripciontextBox.Text))
+            {
+                errorProvider1.SetError(DescripciontextBox, "Campo Vacio");
+                paso = true;
+
+            }
+            if (CantidadnumericUpDown.Value==0)
+            {
+                errorProvider1.SetError(CantidadnumericUpDown, "Campo vacio");
+                paso = true;
+            }
+            if (PrecionumericUpDown.Value == 0) 
+            {
+                errorProvider1.SetError(PrecionumericUpDown, "Campo Vacio");
+                paso = true;
+            }
+            if (string.IsNullOrEmpty(ProvedorcomboBox.Text))
+            {
+                errorProvider1.SetError(ProvedorcomboBox, "Combo vacio");
+                paso = true;
+            }
+            if(FechadateTimePicker.Value <= DateTime.Now)
+            {
+                errorProvider1.SetError(FechadateTimePicker, "Fecha Fuera De Rango");
+                paso = true;
+            }
+         
+
+            return paso;
         }
 
-        
+
     }
 }

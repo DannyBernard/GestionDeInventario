@@ -62,8 +62,7 @@
             this.CriteriotextBox.Name = "CriteriotextBox";
             this.CriteriotextBox.Size = new System.Drawing.Size(200, 22);
             this.CriteriotextBox.TabIndex = 1;
-            this.CriteriotextBox.TextChanged += new System.EventHandler(this.CriteriotextBox_TextChanged);
-            this.CriteriotextBox.MouseEnter += new System.EventHandler(this.CriteriotextBox_TextChanged);
+         
             // 
             // dataGridView1
             // 
@@ -137,6 +136,7 @@
             this.Buscarbutton.Size = new System.Drawing.Size(97, 61);
             this.Buscarbutton.TabIndex = 4;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // codigoProductoDataGridViewTextBoxColumn
             // 

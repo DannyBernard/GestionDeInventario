@@ -181,14 +181,14 @@ namespace GestionDeInventario.Entidades
 
 
         }
-        public List<Producto> BuscarL(string Descripcion,string provedor)
+        public List<Producto> BuscarL()
         {
             List<Producto> lista = new List<Producto>();
             MySqlConnection conn = getConnection();
             conn.Open();
 
             MySqlCommand command;
-            command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion,Precio ,Cantidad,  Provedor, FechaVencimiento FROM Producto where Inactivo <>1 and Descripcion or precio", Descripcion,Precio), conn);
+            command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion,Precio ,Cantidad,  Provedor, FechaVencimiento FROM Producto where Inactivo <>1 and Descripcion or precio", Descripcion, Precio), conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -227,6 +227,28 @@ namespace GestionDeInventario.Entidades
             }
             conn.Close();
             return this;
+        }
+        public List<Producto> Buscar(string Desc)
+        {
+           List< Producto> lista = new List<Producto>();
+            MySqlConnection conn = getConnection();
+            conn.Open();
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Precio, Cantidad, Provedor, FechaVencimiento FROM Producto WHERE Descripcion='{0}'", Desc), conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Producto p = new Producto();
+                p.CodigoProducto = reader.GetInt32(0);
+                p.Descripcion = reader.GetString(1);
+                p.Precio = reader.GetFloat(2);
+                p.Cantidad = reader.GetInt32(3);
+                p.Provedor = reader.GetString(4);
+                p.FechaDeVencimiento = reader.GetDateTime(5);
+
+                lista.Add(p);
+            }
+            conn.Close();
+            return lista;
         }
         public void CargarCombo(ComboBox combo)
         {

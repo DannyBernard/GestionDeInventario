@@ -23,7 +23,7 @@ namespace GestionDeInventario.UI
         {
            
             Producto p = new Producto();
-            dataGridView1.DataSource = p.BuscarL(p.Descripcion,p.Provedor);
+            dataGridView1.DataSource = p.BuscarL();
         }
 
         
@@ -44,14 +44,15 @@ namespace GestionDeInventario.UI
             this.Close();
         }
 
-        private void CriteriotextBox_TextChanged(object sender, EventArgs e)
+     
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
         {
             Producto p = new Producto();
             string desc;
-            string provedor;
+            
             desc = CriteriotextBox.Text;
-            provedor = CriteriotextBox.Text;
-            p.BuscarL(desc, provedor);
+            dataGridView1.DataSource = p.Buscar(desc);
         }
     }
 }

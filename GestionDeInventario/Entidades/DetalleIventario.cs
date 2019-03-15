@@ -51,7 +51,7 @@ namespace GestionDeInventario.Entidades
             MySqlCommand command;
             foreach (var item in detalleIventarios)
             {
-                string sqlInsert = "INSERT IventarioProducto (CodigoIventarioProducto,CodigoProducto,Cantidad,Precio,DescripcionDelProducto,Almacen,Gondola)VALUES(@CodigoIventarioProducto,@CodigoProducto,@Cantidad,@Precio,@DescripcionDelProducto,@Almacen,@Gondola)";
+                string sqlInsert = "INSERT IventarioProducto (CodigoIventarioProducto,CodigoProducto,Cantidad,Precio,DescripcionDelProducto,Almacen,Gondola,CodigoIventario)VALUES(@CodigoIventarioProducto,@CodigoProducto,@Cantidad,@Precio,@DescripcionDelProducto,@Almacen,@Gondola,@CodigoIventario)";
                 MySqlConnection conn = getConnection();
                 conn.Open();
                 command = new MySqlCommand(sqlInsert, conn);
@@ -59,11 +59,11 @@ namespace GestionDeInventario.Entidades
                 command.Parameters.AddWithValue("@CodigoIventarioProducto", item.CodigoIventarioProducto);
                 command.Parameters.AddWithValue("@CodigoProducto", item.CodigoProducto);
                 command.Parameters.AddWithValue("@Cantidad", item.Cantidad);
-                command.Parameters.AddWithValue("@Precio", item.Cantidad);
+                command.Parameters.AddWithValue("@Precio", item.Precio);
                 command.Parameters.AddWithValue("@DescripcionDelProducto", this.DescripcionDelProducto);
                 command.Parameters.AddWithValue("@Almacen", item.Almacen);
                 command.Parameters.AddWithValue("@Gondola", item.Gondola);
-                //command.Parameters.AddWithValue("@CodigoIventario", item.CodigoIventario);
+                command.Parameters.AddWithValue("@CodigoIventario", item.CodigoIventario);
                 // command.Parameters.AddWithValue("@Inactivo", Convert.ToByte(0));
 
                 command.Prepare();
@@ -112,7 +112,7 @@ namespace GestionDeInventario.Entidades
             conn.Open();
            
             
-                MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoIventarioProducto,CodigoProducto,Cantidad,Precio,DescripcionDelProducto,Almacen,Gondola FROM IventarioProducto WHERE CodigoIventarioProducto ", id), conn);
+                MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoIventarioProducto,CodigoProducto,Cantidad,Precio,DescripcionDelProducto,Almacen,Gondola FROM IventarioProducto WHERE CodigoIventario ", id), conn);
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
