@@ -181,22 +181,22 @@ namespace GestionDeInventario.Entidades
 
 
         }
-        public List<Producto> BuscarL()
+        public List<Producto> BuscarL(string Descripcion,string provedor)
         {
             List<Producto> lista = new List<Producto>();
             MySqlConnection conn = getConnection();
             conn.Open();
 
             MySqlCommand command;
-            command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Cantidad, Precio, Provedor, FechaVencimiento FROM Producto where Inactivo <>1"), conn);
+            command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion,Precio ,Cantidad,  Provedor, FechaVencimiento FROM Producto where Inactivo <>1 and Descripcion or precio", Descripcion,Precio), conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 Producto producto = new Producto();
                 producto.CodigoProducto = reader.GetInt32(0);
                 producto.Descripcion = reader.GetString(1);
-                producto.Precio = reader.GetFloat(3);
-                producto.Cantidad = reader.GetInt32(2);
+                producto.Precio = reader.GetFloat(2);
+                producto.Cantidad = reader.GetInt32(3);
                 producto.Provedor = reader.GetString(4);
                 producto.FechaDeVencimiento = reader.GetDateTime(5);
 
@@ -211,7 +211,7 @@ namespace GestionDeInventario.Entidades
         {
             MySqlConnection conn = getConnection();
             conn.Open();
-            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Cantidad, Precio, Provedor, FechaVencimiento FROM Producto WHERE CodigoProducto={0}", id), conn);
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Precio, Cantidad, Provedor, FechaVencimiento FROM Producto WHERE CodigoProducto={0}", id), conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {

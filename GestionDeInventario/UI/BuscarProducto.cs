@@ -21,14 +21,12 @@ namespace GestionDeInventario.UI
         
          public void LlenarGr()
         {
+           
             Producto p = new Producto();
-            dataGridView1.DataSource = p.BuscarL();
+            dataGridView1.DataSource = p.BuscarL(p.Descripcion,p.Provedor);
         }
 
-        private void Buscarbutton_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
         public Producto Productoselec { get; set; } 
         private void Aceptarbutton_Click(object sender, EventArgs e)
         {
@@ -44,6 +42,16 @@ namespace GestionDeInventario.UI
         private void Cancbutton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CriteriotextBox_TextChanged(object sender, EventArgs e)
+        {
+            Producto p = new Producto();
+            string desc;
+            string provedor;
+            desc = CriteriotextBox.Text;
+            provedor = CriteriotextBox.Text;
+            p.BuscarL(desc, provedor);
         }
     }
 }

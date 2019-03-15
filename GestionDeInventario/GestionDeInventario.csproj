@@ -62,6 +62,7 @@
     <Compile Include="Entidades\Compra.cs" />
     <Compile Include="Entidades\DetalleCompra.cs" />
     <Compile Include="Entidades\DetalleIventario.cs" />
+    <Compile Include="Entidades\Iventario.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\Provedores.cs" />
     <Compile Include="Entidades\Usuario.cs" />
@@ -77,6 +78,12 @@
     </Compile>
     <Compile Include="UI\BuscarProvedor.Designer.cs">
       <DependentUpon>BuscarProvedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BusquedaDeProvedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BusquedaDeProvedores.Designer.cs">
+      <DependentUpon>BusquedaDeProvedores.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Compras.cs">
       <SubType>Form</SubType>
@@ -122,6 +129,9 @@
     <EmbeddedResource Include="UI\BuscarProvedor.resx">
       <DependentUpon>BuscarProvedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\BusquedaDeProvedores.resx">
+      <DependentUpon>BusquedaDeProvedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +164,7 @@
     <None Include="Properties\DataSources\GestionDeInventario.Entidades.DetalleCompra.datasource" />
     <None Include="Properties\DataSources\GestionDeInventario.Entidades.DetalleIventario.datasource" />
     <None Include="Properties\DataSources\GestionDeInventario.Entidades.Producto.datasource" />
+    <None Include="Properties\DataSources\GestionDeInventario.Entidades.Provedores.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -217,6 +228,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cancel_icon-icons.com_73703.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-math-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

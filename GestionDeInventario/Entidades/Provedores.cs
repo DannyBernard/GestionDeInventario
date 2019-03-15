@@ -75,7 +75,7 @@ namespace GestionDeInventario.Entidades
                 MySqlConnection conn = getConnection();
                 conn.Open();
                 MySqlCommand mySqlCommand = new MySqlCommand();
-                stringBuilder.AppendFormat("UPDATE Provedores SET NombreDeLaEmpresa ='{0}',Direccion = '{1}',Telefono ='{2}',Chofer = '{3}'where CodigoProvedor={4}", this.NombreDeLaEmpresa, this.Direccion, this.Telefono, this.Chofer, this.CodigoProvedores);
+                stringBuilder.AppendFormat("UPDATE Provedores SET NombreDeLaEmpresa ='{0}',Direccion = '{1}',Telefono ='{2}',ChoferActual = '{3}'where CodigoProvedor={4}", this.NombreDeLaEmpresa, this.Direccion, this.Telefono, this.Chofer, this.CodigoProvedores);
                 mySqlCommand.Connection = conn;
                 mySqlCommand.CommandText = stringBuilder.ToString();
                 if (mySqlCommand.ExecuteNonQuery() > 0)
@@ -128,7 +128,7 @@ namespace GestionDeInventario.Entidades
             conn.Open();
 
             MySqlCommand command;
-            command = new MySqlCommand(string.Format("SELECT CodigoProvedor, NombreDeLaEmpresa,Direccion, Telefono, Chofer,FROM Provedores where Inactivo <>1"), conn);
+            command = new MySqlCommand(string.Format("SELECT CodigoProvedor, NombreDeLaEmpresa,Direccion, Telefono, ChoferActual FROM Provedores where Inactivo <>1"), conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -151,7 +151,7 @@ namespace GestionDeInventario.Entidades
         {
             MySqlConnection conn = getConnection();
             conn.Open();
-            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoProvedor, NombreDeLaEmpresa,Direccion, Telefono, Chofer,FROM Provedores WHERE CodigoProvedor={0}", id), conn);
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoProvedor, NombreDeLaEmpresa,Direccion, Telefono, ChoferActual FROM Provedores WHERE CodigoProvedor={0}", id), conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {

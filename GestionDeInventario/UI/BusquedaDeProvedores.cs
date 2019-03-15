@@ -11,29 +11,18 @@ using System.Windows.Forms;
 
 namespace GestionDeInventario.UI
 {
-    public partial class BuscarProvedor : Form
+    public partial class BusquedaDeProvedores : Form
     {
-        public BuscarProvedor()
+        public BusquedaDeProvedores()
         {
             InitializeComponent();
             CagarGrin();
-        }
+ }
+
         public void CagarGrin()
         {
             Provedores p = new Provedores();
             dataGridView1.DataSource = p.BuscarL();
-        }
-        public Provedores Productoselec { get; set; }
-        private void Aceptarbutton_Click(object sender, EventArgs e)
-        {
-            Provedores p = new Provedores();
-            if (dataGridView1.SelectedRows.Count == 1)
-            {
-                int Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                Productoselec = p.Buscarp(Id);
-                this.Close();
-
-            }
         }
     }
 }

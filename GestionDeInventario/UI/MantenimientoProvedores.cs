@@ -41,6 +41,17 @@ namespace GestionDeInventario.UI
             return provedores;
         }
 
+        public void LlenaCampo(Provedores provedores)
+        {
+            CodigoProvedornumericUpDown.Value = Convert.ToInt32(provedores.CodigoProvedores);
+            NombreDeLaEmpresatextBox.Text = provedores.NombreDeLaEmpresa;
+            DirecciontextBox.Text = provedores.Direccion;
+            TelefonomaskedTextBox.Text = provedores.Telefono;
+            ChofertextBox.Text = provedores.Chofer;
+
+        }
+       
+
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Nuevo();
@@ -53,6 +64,19 @@ namespace GestionDeInventario.UI
             {
                 Nuevo();
                 MessageBox.Show("Guaradado Con Exito");
+            }
+        }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            Provedores provedores = new Provedores();
+            BuscarProvedor busquedaDeProvedores = new BuscarProvedor();
+            busquedaDeProvedores.ShowDialog();
+            if (busquedaDeProvedores.Productoselec != null)
+            {
+                int id = busquedaDeProvedores.Productoselec.CodigoProvedores;
+                provedores.Buscarp(id);
+                LlenaCampo(provedores);
             }
         }
     }

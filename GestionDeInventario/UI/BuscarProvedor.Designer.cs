@@ -43,7 +43,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 73);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(889, 303);
+            this.dataGridView1.Size = new System.Drawing.Size(755, 303);
             this.dataGridView1.TabIndex = 11;
             // 
             // CriteriotextBox
@@ -83,6 +83,7 @@
             this.Aceptarbutton.Size = new System.Drawing.Size(75, 66);
             this.Aceptarbutton.TabIndex = 12;
             this.Aceptarbutton.UseVisualStyleBackColor = true;
+            this.Aceptarbutton.Click += new System.EventHandler(this.Aceptarbutton_Click);
             // 
             // Buscarbutton
             // 
@@ -99,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 484);
+            this.ClientSize = new System.Drawing.Size(772, 484);
             this.Controls.Add(this.Cancbutton);
             this.Controls.Add(this.Aceptarbutton);
             this.Controls.Add(this.dataGridView1);

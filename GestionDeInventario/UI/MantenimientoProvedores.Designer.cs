@@ -39,10 +39,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ChofertextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Buscarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CodigoProvedornumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -140,17 +140,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Botones";
             // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buscarbutton.ForeColor = System.Drawing.SystemColors.Control;
-            this.Buscarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_búsqueda_501;
-            this.Buscarbutton.Location = new System.Drawing.Point(331, 17);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(100, 65);
-            this.Buscarbutton.TabIndex = 17;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            // 
             // Nuevobutton
             // 
             this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -185,6 +174,18 @@
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 73);
             this.Eliminarbutton.TabIndex = 15;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buscarbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Buscarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_búsqueda_501;
+            this.Buscarbutton.Location = new System.Drawing.Point(331, 17);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(100, 65);
+            this.Buscarbutton.TabIndex = 17;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // MantenimientoProvedores
             // 
