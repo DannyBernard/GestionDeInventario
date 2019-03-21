@@ -44,13 +44,39 @@ namespace GestionDeInventario.Entidades
             Almacen = almacen;
             CodigoIventario = codigoIventario;
         }
+         public DataTable foreign()
+        {
+            DataTable dt = new DataTable();
 
+            try
+            {
+
+
+               
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                MySqlConnection conn = getConnection();
+               
+                conn.Open();
+                adapter = new MySqlDataAdapter ("select MAX (CodigoIventario) from Invetario", conn);
+                adapter.Fill(dt);
+               conn.Close();
+               
+            }catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            return dt;
+
+        }
         public bool Crear(List<DetalleIventario> detalleIventarios)
         {
             bool paso = false;
+            Iventario iventario = new Iventario();
             MySqlCommand command;
             foreach (var item in detalleIventarios)
             {
+            ;
                 string sqlInsert = "INSERT IventarioProducto (CodigoIventarioProducto,CodigoProducto,Cantidad,Precio,DescripcionDelProducto,Almacen,Gondola,CodigoIventario)VALUES(@CodigoIventarioProducto,@CodigoProducto,@Cantidad,@Precio,@DescripcionDelProducto,@Almacen,@Gondola,@CodigoIventario)";
                 MySqlConnection conn = getConnection();
                 conn.Open();
@@ -60,10 +86,10 @@ namespace GestionDeInventario.Entidades
                 command.Parameters.AddWithValue("@CodigoProducto", item.CodigoProducto);
                 command.Parameters.AddWithValue("@Cantidad", item.Cantidad);
                 command.Parameters.AddWithValue("@Precio", item.Precio);
-                command.Parameters.AddWithValue("@DescripcionDelProducto", this.DescripcionDelProducto);
+                command.Parameters.AddWithValue("@DescripcionDelProducto", item.DescripcionDelProducto);
                 command.Parameters.AddWithValue("@Almacen", item.Almacen);
                 command.Parameters.AddWithValue("@Gondola", item.Gondola);
-                command.Parameters.AddWithValue("@CodigoIventario", item.CodigoIventario);
+                command.Parameters.AddWithValue("@CodigoIventario",item.CodigoIventario);
                 // command.Parameters.AddWithValue("@Inactivo", Convert.ToByte(0));
 
                 command.Prepare();

@@ -39,7 +39,7 @@ namespace GestionDeInventario
             NombretextBox.Text = usuario.Nombres;
             CuentatextBox.Text = usuario.Cuenta;
             ClavetextBox.Text = usuario.Clave;
-            dateTimePicker1.Value =Convert.ToDateTime( usuario.FechaCreacion);
+           dateTimePicker1.Value =Convert.ToDateTime( usuario.FechaCreacion);
             if (usuario.TipoDeCuenta == false)
             {
                 UsuarioradioButton.Checked = true;

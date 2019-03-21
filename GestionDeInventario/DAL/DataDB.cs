@@ -11,7 +11,7 @@ namespace GestionDeInventario.MisClases
     {
         public DataDB()
         {
-            StrConnection = "Initial Catalog= ProyectoAplicado_1_2019; datasource=localhost;port =3306;username = danny; password=1515";
+            StrConnection = "Initial Catalog= ProyectoAplicado_1_2019; datasource=127.0.0.1;port =3306;username = danny; password=1515";
             connection = new MySqlConnection(StrConnection);
         }
         protected String StrConnection;

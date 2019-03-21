@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.CodigoIventarionumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TipoDeInventariocomboBox = new System.Windows.Forms.ComboBox();
@@ -49,17 +47,9 @@
             this.AlmacencomboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CodigoIventarioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripcionDelProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gondola = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Almacen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodigoIventario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Buscarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
             this.CodigoRegistronumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.AddALGrinbutton = new System.Windows.Forms.Button();
@@ -68,12 +58,15 @@
             this.BuscarProductobutton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.codigoIventarioProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalleIventarioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDelProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gondolaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.almacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoIventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalleIventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.CodigoIventarionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigoProductonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
@@ -82,26 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CodigoRegistronumericUpDown)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo Iventario";
-            // 
-            // CodigoIventarionumericUpDown
-            // 
-            this.CodigoIventarionumericUpDown.Location = new System.Drawing.Point(128, 88);
-            this.CodigoIventarionumericUpDown.Name = "CodigoIventarionumericUpDown";
-            this.CodigoIventarionumericUpDown.Size = new System.Drawing.Size(120, 22);
-            this.CodigoIventarionumericUpDown.TabIndex = 1;
             // 
             // label2
             // 
@@ -122,6 +97,7 @@
             // 
             // TipoDeInventariocomboBox
             // 
+            this.TipoDeInventariocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoDeInventariocomboBox.FormattingEnabled = true;
             this.TipoDeInventariocomboBox.Items.AddRange(new object[] {
             "Fisico ",
@@ -134,7 +110,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(270, 93);
+            this.label4.Location = new System.Drawing.Point(22, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 17);
             this.label4.TabIndex = 5;
@@ -142,13 +118,15 @@
             // 
             // ObservaciontextBox
             // 
-            this.ObservaciontextBox.Location = new System.Drawing.Point(364, 91);
+            this.ObservaciontextBox.Location = new System.Drawing.Point(116, 89);
             this.ObservaciontextBox.Name = "ObservaciontextBox";
             this.ObservaciontextBox.Size = new System.Drawing.Size(174, 22);
             this.ObservaciontextBox.TabIndex = 6;
             // 
             // CodigoProductonumericUpDown
             // 
+            this.CodigoProductonumericUpDown.BackColor = System.Drawing.Color.Aqua;
+            this.CodigoProductonumericUpDown.Enabled = false;
             this.CodigoProductonumericUpDown.Location = new System.Drawing.Point(164, 21);
             this.CodigoProductonumericUpDown.Name = "CodigoProductonumericUpDown";
             this.CodigoProductonumericUpDown.Size = new System.Drawing.Size(120, 22);
@@ -165,6 +143,8 @@
             // 
             // DescripciontextBox
             // 
+            this.DescripciontextBox.BackColor = System.Drawing.Color.Aqua;
+            this.DescripciontextBox.Enabled = false;
             this.DescripciontextBox.Location = new System.Drawing.Point(400, 24);
             this.DescripciontextBox.Name = "DescripciontextBox";
             this.DescripciontextBox.Size = new System.Drawing.Size(174, 22);
@@ -181,6 +161,7 @@
             // 
             // GondolacomboBox
             // 
+            this.GondolacomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GondolacomboBox.FormattingEnabled = true;
             this.GondolacomboBox.Items.AddRange(new object[] {
             "A1",
@@ -203,6 +184,8 @@
             // 
             // PrecionumericUpDown
             // 
+            this.PrecionumericUpDown.BackColor = System.Drawing.Color.Aqua;
+            this.PrecionumericUpDown.Enabled = false;
             this.PrecionumericUpDown.Location = new System.Drawing.Point(164, 83);
             this.PrecionumericUpDown.Maximum = new decimal(new int[] {
             100000,
@@ -224,6 +207,8 @@
             // 
             // CantidadnumericUpDown
             // 
+            this.CantidadnumericUpDown.BackColor = System.Drawing.Color.Aqua;
+            this.CantidadnumericUpDown.Enabled = false;
             this.CantidadnumericUpDown.Location = new System.Drawing.Point(400, 84);
             this.CantidadnumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -245,12 +230,13 @@
             // 
             // AlmacencomboBox
             // 
+            this.AlmacencomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AlmacencomboBox.FormattingEnabled = true;
             this.AlmacencomboBox.Items.AddRange(new object[] {
             "Almacen 1",
             "Almacan 2",
             "Tienda"});
-            this.AlmacencomboBox.Location = new System.Drawing.Point(626, 95);
+            this.AlmacencomboBox.Location = new System.Drawing.Point(405, 91);
             this.AlmacencomboBox.Name = "AlmacencomboBox";
             this.AlmacencomboBox.Size = new System.Drawing.Size(121, 24);
             this.AlmacencomboBox.TabIndex = 18;
@@ -258,7 +244,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(548, 98);
+            this.label10.Location = new System.Drawing.Point(327, 94);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 17);
             this.label10.TabIndex = 17;
@@ -269,63 +255,25 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigoIventarioProductoDataGridViewTextBoxColumn,
             this.codigoProductoDataGridViewTextBoxColumn,
-            this.CodigoIventarioProducto,
-            this.Precio,
-            this.DescripcionDelProducto,
-            this.Gondola,
-            this.Almacen,
-            this.CodigoIventario,
-            this.cantidadDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.detalleIventarioBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 275);
+            this.cantidadDataGridViewTextBoxColumn,
+            this.precioDataGridViewTextBoxColumn,
+            this.descripcionDelProductoDataGridViewTextBoxColumn,
+            this.gondolaDataGridViewTextBoxColumn,
+            this.almacenDataGridViewTextBoxColumn,
+            this.codigoIventarioDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.detalleIventarioBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 283);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(884, 227);
+            this.dataGridView1.Size = new System.Drawing.Size(884, 219);
             this.dataGridView1.TabIndex = 19;
-            // 
-            // CodigoIventarioProducto
-            // 
-            this.CodigoIventarioProducto.DataPropertyName = "CodigoIventarioProducto";
-            this.CodigoIventarioProducto.HeaderText = "CodigoIventarioProducto";
-            this.CodigoIventarioProducto.Name = "CodigoIventarioProducto";
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "Precio";
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // DescripcionDelProducto
-            // 
-            this.DescripcionDelProducto.DataPropertyName = "DescripcionDelProducto";
-            this.DescripcionDelProducto.HeaderText = "DescripcionDelProducto";
-            this.DescripcionDelProducto.Name = "DescripcionDelProducto";
-            // 
-            // Gondola
-            // 
-            this.Gondola.DataPropertyName = "Gondola";
-            this.Gondola.HeaderText = "Gondola";
-            this.Gondola.Name = "Gondola";
-            // 
-            // Almacen
-            // 
-            this.Almacen.DataPropertyName = "Almacen";
-            this.Almacen.HeaderText = "Almacen";
-            this.Almacen.Name = "Almacen";
-            // 
-            // CodigoIventario
-            // 
-            this.CodigoIventario.DataPropertyName = "CodigoIventario";
-            this.CodigoIventario.HeaderText = "CodigoIventario";
-            this.CodigoIventario.Name = "CodigoIventario";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Buscarbutton);
             this.groupBox1.Controls.Add(this.Nuevobutton);
             this.groupBox1.Controls.Add(this.Guardarbutton);
-            this.groupBox1.Controls.Add(this.Eliminarbutton);
             this.groupBox1.Location = new System.Drawing.Point(25, 508);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(839, 91);
@@ -333,24 +281,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Botones";
             // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buscarbutton.ForeColor = System.Drawing.SystemColors.Control;
-            this.Buscarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_búsqueda_501;
-            this.Buscarbutton.Location = new System.Drawing.Point(644, 19);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(100, 57);
-            this.Buscarbutton.TabIndex = 17;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
-            // 
             // Nuevobutton
             // 
             this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Nuevobutton.ForeColor = System.Drawing.SystemColors.Control;
             this.Nuevobutton.Image = global::GestionDeInventario.Properties.Resources.icons8_agregar_propiedad_501;
-            this.Nuevobutton.Location = new System.Drawing.Point(164, 11);
+            this.Nuevobutton.Location = new System.Drawing.Point(374, 12);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 73);
             this.Nuevobutton.TabIndex = 13;
@@ -362,23 +298,12 @@
             this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Guardarbutton.ForeColor = System.Drawing.SystemColors.Control;
             this.Guardarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_guardar_501;
-            this.Guardarbutton.Location = new System.Drawing.Point(313, 11);
+            this.Guardarbutton.Location = new System.Drawing.Point(479, 11);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 73);
             this.Guardarbutton.TabIndex = 14;
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
-            // 
-            // Eliminarbutton
-            // 
-            this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminarbutton.ForeColor = System.Drawing.SystemColors.Control;
-            this.Eliminarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_eliminar_vista_501;
-            this.Eliminarbutton.Location = new System.Drawing.Point(487, 11);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(75, 73);
-            this.Eliminarbutton.TabIndex = 15;
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
             // 
             // CodigoRegistronumericUpDown
             // 
@@ -401,7 +326,7 @@
             this.AddALGrinbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddALGrinbutton.ForeColor = System.Drawing.SystemColors.Control;
             this.AddALGrinbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_plus_math_48;
-            this.AddALGrinbutton.Location = new System.Drawing.Point(621, 66);
+            this.AddALGrinbutton.Location = new System.Drawing.Point(621, 83);
             this.AddALGrinbutton.Name = "AddALGrinbutton";
             this.AddALGrinbutton.Size = new System.Drawing.Size(75, 59);
             this.AddALGrinbutton.TabIndex = 27;
@@ -413,7 +338,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
             this.button1.Image = global::GestionDeInventario.Properties.Resources.add_file;
-            this.button1.Location = new System.Drawing.Point(753, 88);
+            this.button1.Location = new System.Drawing.Point(532, 84);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 45);
             this.button1.TabIndex = 22;
@@ -435,7 +360,7 @@
             this.BuscarProductobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BuscarProductobutton.ForeColor = System.Drawing.SystemColors.Control;
             this.BuscarProductobutton.Image = global::GestionDeInventario.Properties.Resources.icons8_búsqueda_501;
-            this.BuscarProductobutton.Location = new System.Drawing.Point(596, 7);
+            this.BuscarProductobutton.Location = new System.Drawing.Point(605, 21);
             this.BuscarProductobutton.Name = "BuscarProductobutton";
             this.BuscarProductobutton.Size = new System.Drawing.Size(100, 57);
             this.BuscarProductobutton.TabIndex = 18;
@@ -454,9 +379,9 @@
             this.groupBox2.Controls.Add(this.PrecionumericUpDown);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.CantidadnumericUpDown);
-            this.groupBox2.Location = new System.Drawing.Point(5, 132);
+            this.groupBox2.Location = new System.Drawing.Point(5, 135);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(892, 145);
+            this.groupBox2.Size = new System.Drawing.Size(892, 142);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Producto Para Iventario";
@@ -464,6 +389,12 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // codigoIventarioProductoDataGridViewTextBoxColumn
+            // 
+            this.codigoIventarioProductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoIventarioProducto";
+            this.codigoIventarioProductoDataGridViewTextBoxColumn.HeaderText = "CodigoIventarioProducto";
+            this.codigoIventarioProductoDataGridViewTextBoxColumn.Name = "codigoIventarioProductoDataGridViewTextBoxColumn";
             // 
             // codigoProductoDataGridViewTextBoxColumn
             // 
@@ -477,13 +408,35 @@
             this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
             this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
             // 
-            // detalleIventarioBindingSource1
+            // precioDataGridViewTextBoxColumn
             // 
-            this.detalleIventarioBindingSource1.DataSource = typeof(GestionDeInventario.Entidades.DetalleIventario);
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
             // 
-            // productoBindingSource
+            // descripcionDelProductoDataGridViewTextBoxColumn
             // 
-            this.productoBindingSource.DataSource = typeof(GestionDeInventario.Entidades.Producto);
+            this.descripcionDelProductoDataGridViewTextBoxColumn.DataPropertyName = "DescripcionDelProducto";
+            this.descripcionDelProductoDataGridViewTextBoxColumn.HeaderText = "DescripcionDelProducto";
+            this.descripcionDelProductoDataGridViewTextBoxColumn.Name = "descripcionDelProductoDataGridViewTextBoxColumn";
+            // 
+            // gondolaDataGridViewTextBoxColumn
+            // 
+            this.gondolaDataGridViewTextBoxColumn.DataPropertyName = "Gondola";
+            this.gondolaDataGridViewTextBoxColumn.HeaderText = "Gondola";
+            this.gondolaDataGridViewTextBoxColumn.Name = "gondolaDataGridViewTextBoxColumn";
+            // 
+            // almacenDataGridViewTextBoxColumn
+            // 
+            this.almacenDataGridViewTextBoxColumn.DataPropertyName = "Almacen";
+            this.almacenDataGridViewTextBoxColumn.HeaderText = "Almacen";
+            this.almacenDataGridViewTextBoxColumn.Name = "almacenDataGridViewTextBoxColumn";
+            // 
+            // codigoIventarioDataGridViewTextBoxColumn
+            // 
+            this.codigoIventarioDataGridViewTextBoxColumn.DataPropertyName = "CodigoIventario";
+            this.codigoIventarioDataGridViewTextBoxColumn.HeaderText = "CodigoIventario";
+            this.codigoIventarioDataGridViewTextBoxColumn.Name = "codigoIventarioDataGridViewTextBoxColumn";
             // 
             // detalleIventarioBindingSource
             // 
@@ -510,11 +463,8 @@
             this.Controls.Add(this.TipoDeInventariocomboBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.CodigoIventarionumericUpDown);
-            this.Controls.Add(this.label1);
             this.Name = "ControlIvenariocs";
             this.Text = "ControlIvenariocs";
-            ((System.ComponentModel.ISupportInitialize)(this.CodigoIventarionumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigoProductonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
@@ -524,8 +474,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -533,9 +481,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown CodigoIventarionumericUpDown;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox TipoDeInventariocomboBox;
@@ -554,29 +499,25 @@
         private System.Windows.Forms.ComboBox AlmacencomboBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource productoBindingSource;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
-        private System.Windows.Forms.Button Eliminarbutton;
-        private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button AddGondolabutton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.NumericUpDown CodigoRegistronumericUpDown;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.BindingSource detalleIventarioBindingSource1;
-        private System.Windows.Forms.BindingSource detalleIventarioBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoProductoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoIventarioProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionDelProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gondola;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Almacen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoIventario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button AddALGrinbutton;
         private System.Windows.Forms.Button BuscarProductobutton;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoIventarioProductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoProductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDelProductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gondolaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn almacenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoIventarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource detalleIventarioBindingSource;
     }
 }

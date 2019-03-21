@@ -1,4 +1,6 @@
-﻿namespace GestionDeInventario.UI
+﻿using System;
+
+namespace GestionDeInventario.UI
 {
     partial class BusquedaDeProvedores
     {
@@ -30,43 +32,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.Cancbutton = new System.Windows.Forms.Button();
-            this.Aceptarbutton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Buscarbutton = new System.Windows.Forms.Button();
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.provedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Cancbutton = new System.Windows.Forms.Button();
+            this.Aceptarbutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             this.codigoProvedoresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDeLaEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.choferDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.provedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provedoresBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Cancbutton
-            // 
-            this.Cancbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Cancbutton.ForeColor = System.Drawing.SystemColors.Control;
-            this.Cancbutton.Image = global::GestionDeInventario.Properties.Resources.Cancel_icon_icons_com_73703;
-            this.Cancbutton.Location = new System.Drawing.Point(466, 395);
-            this.Cancbutton.Name = "Cancbutton";
-            this.Cancbutton.Size = new System.Drawing.Size(75, 66);
-            this.Cancbutton.TabIndex = 15;
-            this.Cancbutton.UseVisualStyleBackColor = true;
-            // 
-            // Aceptarbutton
-            // 
-            this.Aceptarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Aceptarbutton.ForeColor = System.Drawing.SystemColors.Control;
-            this.Aceptarbutton.Image = global::GestionDeInventario.Properties.Resources.Accept256_25070;
-            this.Aceptarbutton.Location = new System.Drawing.Point(317, 395);
-            this.Aceptarbutton.Name = "Aceptarbutton";
-            this.Aceptarbutton.Size = new System.Drawing.Size(75, 66);
-            this.Aceptarbutton.TabIndex = 14;
-            this.Aceptarbutton.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -105,17 +85,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(745, 303);
             this.dataGridView1.TabIndex = 16;
             // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buscarbutton.ForeColor = System.Drawing.SystemColors.Control;
-            this.Buscarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_búsqueda_501;
-            this.Buscarbutton.Location = new System.Drawing.Point(334, 1);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(97, 61);
-            this.Buscarbutton.TabIndex = 13;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            // 
             // CriteriotextBox
             // 
             this.CriteriotextBox.Location = new System.Drawing.Point(116, 20);
@@ -132,9 +101,39 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Criterio";
             // 
-            // provedoresBindingSource
+            // Cancbutton
             // 
-            this.provedoresBindingSource.DataSource = typeof(GestionDeInventario.Entidades.Provedores);
+            this.Cancbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Cancbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Cancbutton.Image = global::GestionDeInventario.Properties.Resources.Cancel_icon_icons_com_73703;
+            this.Cancbutton.Location = new System.Drawing.Point(466, 395);
+            this.Cancbutton.Name = "Cancbutton";
+            this.Cancbutton.Size = new System.Drawing.Size(75, 66);
+            this.Cancbutton.TabIndex = 15;
+            this.Cancbutton.UseVisualStyleBackColor = true;
+            // 
+            // Aceptarbutton
+            // 
+            this.Aceptarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Aceptarbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Aceptarbutton.Image = global::GestionDeInventario.Properties.Resources.Accept256_25070;
+            this.Aceptarbutton.Location = new System.Drawing.Point(317, 395);
+            this.Aceptarbutton.Name = "Aceptarbutton";
+            this.Aceptarbutton.Size = new System.Drawing.Size(75, 66);
+            this.Aceptarbutton.TabIndex = 14;
+            this.Aceptarbutton.UseVisualStyleBackColor = true;
+            this.Aceptarbutton.Click += new System.EventHandler(this.Aceptarbutton_Click);
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buscarbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Buscarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_búsqueda_501;
+            this.Buscarbutton.Location = new System.Drawing.Point(334, 1);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(97, 61);
+            this.Buscarbutton.TabIndex = 13;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
             // 
             // codigoProvedoresDataGridViewTextBoxColumn
             // 
@@ -171,6 +170,10 @@
             this.choferDataGridViewTextBoxColumn.Name = "choferDataGridViewTextBoxColumn";
             this.choferDataGridViewTextBoxColumn.Width = 78;
             // 
+            // provedoresBindingSource
+            // 
+            this.provedoresBindingSource.DataSource = typeof(GestionDeInventario.Entidades.Provedores);
+            // 
             // BusquedaDeProvedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -189,6 +192,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void Aceptarbutton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
