@@ -178,14 +178,14 @@ namespace GestionDeInventario.Entidades
 
 
         }
-        public List<Producto> BuscarL()
+        public List<Producto> BuscarL(string Desc)
         {
             List<Producto> lista = new List<Producto>();
             MySqlConnection conn = getConnection();
             conn.Open();
 
             MySqlCommand command;
-            command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion,Precio ,Cantidad,  Provedor, FechaVencimiento FROM Producto where Inactivo <>1 and Descripcion or precio", Descripcion, Precio), conn);
+            command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion,Precio ,Cantidad,  Provedor, FechaVencimiento FROM Producto where Inactivo <>1 and Descripcion  or precio ", Descripcion, Precio), conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -230,7 +230,7 @@ namespace GestionDeInventario.Entidades
            List< Producto> lista = new List<Producto>();
             MySqlConnection conn = getConnection();
             conn.Open();
-            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Precio, Cantidad, Provedor, FechaVencimiento FROM Producto WHERE Descripcion='{0}'", Desc), conn);
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Precio, Cantidad, Provedor, FechaVencimiento FROM Producto WHERE Descripcion='{0}'like'%"  +Desc+ "%'",Desc), conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {

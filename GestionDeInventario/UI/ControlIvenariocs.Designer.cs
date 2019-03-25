@@ -47,6 +47,15 @@
             this.AlmacencomboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.codigoIventarioProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDelProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gondolaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.almacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoIventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalleIventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -58,24 +67,15 @@
             this.BuscarProductobutton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.codigoIventarioProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDelProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gondolaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.almacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoIventarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalleIventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CodigoProductonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CodigoRegistronumericUpDown)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -208,7 +208,6 @@
             // CantidadnumericUpDown
             // 
             this.CantidadnumericUpDown.BackColor = System.Drawing.Color.Aqua;
-            this.CantidadnumericUpDown.Enabled = false;
             this.CantidadnumericUpDown.Location = new System.Drawing.Point(400, 84);
             this.CantidadnumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -269,6 +268,58 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(884, 219);
             this.dataGridView1.TabIndex = 19;
+            // 
+            // codigoIventarioProductoDataGridViewTextBoxColumn
+            // 
+            this.codigoIventarioProductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoIventarioProducto";
+            this.codigoIventarioProductoDataGridViewTextBoxColumn.HeaderText = "CodigoIventarioProducto";
+            this.codigoIventarioProductoDataGridViewTextBoxColumn.Name = "codigoIventarioProductoDataGridViewTextBoxColumn";
+            // 
+            // codigoProductoDataGridViewTextBoxColumn
+            // 
+            this.codigoProductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoProducto";
+            this.codigoProductoDataGridViewTextBoxColumn.HeaderText = "CodigoProducto";
+            this.codigoProductoDataGridViewTextBoxColumn.Name = "codigoProductoDataGridViewTextBoxColumn";
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            // 
+            // descripcionDelProductoDataGridViewTextBoxColumn
+            // 
+            this.descripcionDelProductoDataGridViewTextBoxColumn.DataPropertyName = "DescripcionDelProducto";
+            this.descripcionDelProductoDataGridViewTextBoxColumn.HeaderText = "DescripcionDelProducto";
+            this.descripcionDelProductoDataGridViewTextBoxColumn.Name = "descripcionDelProductoDataGridViewTextBoxColumn";
+            // 
+            // gondolaDataGridViewTextBoxColumn
+            // 
+            this.gondolaDataGridViewTextBoxColumn.DataPropertyName = "Gondola";
+            this.gondolaDataGridViewTextBoxColumn.HeaderText = "Gondola";
+            this.gondolaDataGridViewTextBoxColumn.Name = "gondolaDataGridViewTextBoxColumn";
+            // 
+            // almacenDataGridViewTextBoxColumn
+            // 
+            this.almacenDataGridViewTextBoxColumn.DataPropertyName = "Almacen";
+            this.almacenDataGridViewTextBoxColumn.HeaderText = "Almacen";
+            this.almacenDataGridViewTextBoxColumn.Name = "almacenDataGridViewTextBoxColumn";
+            // 
+            // codigoIventarioDataGridViewTextBoxColumn
+            // 
+            this.codigoIventarioDataGridViewTextBoxColumn.DataPropertyName = "CodigoIventario";
+            this.codigoIventarioDataGridViewTextBoxColumn.HeaderText = "CodigoIventario";
+            this.codigoIventarioDataGridViewTextBoxColumn.Name = "codigoIventarioDataGridViewTextBoxColumn";
+            // 
+            // detalleIventarioBindingSource
+            // 
+            this.detalleIventarioBindingSource.DataSource = typeof(GestionDeInventario.Entidades.DetalleIventario);
             // 
             // groupBox1
             // 
@@ -390,58 +441,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // codigoIventarioProductoDataGridViewTextBoxColumn
-            // 
-            this.codigoIventarioProductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoIventarioProducto";
-            this.codigoIventarioProductoDataGridViewTextBoxColumn.HeaderText = "CodigoIventarioProducto";
-            this.codigoIventarioProductoDataGridViewTextBoxColumn.Name = "codigoIventarioProductoDataGridViewTextBoxColumn";
-            // 
-            // codigoProductoDataGridViewTextBoxColumn
-            // 
-            this.codigoProductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoProducto";
-            this.codigoProductoDataGridViewTextBoxColumn.HeaderText = "CodigoProducto";
-            this.codigoProductoDataGridViewTextBoxColumn.Name = "codigoProductoDataGridViewTextBoxColumn";
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            // 
-            // descripcionDelProductoDataGridViewTextBoxColumn
-            // 
-            this.descripcionDelProductoDataGridViewTextBoxColumn.DataPropertyName = "DescripcionDelProducto";
-            this.descripcionDelProductoDataGridViewTextBoxColumn.HeaderText = "DescripcionDelProducto";
-            this.descripcionDelProductoDataGridViewTextBoxColumn.Name = "descripcionDelProductoDataGridViewTextBoxColumn";
-            // 
-            // gondolaDataGridViewTextBoxColumn
-            // 
-            this.gondolaDataGridViewTextBoxColumn.DataPropertyName = "Gondola";
-            this.gondolaDataGridViewTextBoxColumn.HeaderText = "Gondola";
-            this.gondolaDataGridViewTextBoxColumn.Name = "gondolaDataGridViewTextBoxColumn";
-            // 
-            // almacenDataGridViewTextBoxColumn
-            // 
-            this.almacenDataGridViewTextBoxColumn.DataPropertyName = "Almacen";
-            this.almacenDataGridViewTextBoxColumn.HeaderText = "Almacen";
-            this.almacenDataGridViewTextBoxColumn.Name = "almacenDataGridViewTextBoxColumn";
-            // 
-            // codigoIventarioDataGridViewTextBoxColumn
-            // 
-            this.codigoIventarioDataGridViewTextBoxColumn.DataPropertyName = "CodigoIventario";
-            this.codigoIventarioDataGridViewTextBoxColumn.HeaderText = "CodigoIventario";
-            this.codigoIventarioDataGridViewTextBoxColumn.Name = "codigoIventarioDataGridViewTextBoxColumn";
-            // 
-            // detalleIventarioBindingSource
-            // 
-            this.detalleIventarioBindingSource.DataSource = typeof(GestionDeInventario.Entidades.DetalleIventario);
-            // 
             // ControlIvenariocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -469,12 +468,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CodigoRegistronumericUpDown)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

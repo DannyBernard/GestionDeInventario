@@ -127,15 +127,9 @@ namespace GestionDeInventario.UI
 
             // DetalleIventario detalleIventario = new DetalleIventario();
             dt = foreingk();
-            int id1;
-            if (Convert.ToInt32(dt.Rows[0][0].ToString())==0 )
-            {
-                id = 0;
-            }
-            else
-            {
-                id  = int.Parse(dt.Rows[0][0].ToString());
-            }
+           
+              id = inventario.CodigoInvetario = int.Parse(dt.Rows[0][0].ToString());
+            
 
             detalleIventario.CodigoProducto = Convert.ToInt32(CodigoProductonumericUpDown.Value);
             detalleIventario.DescripcionDelProducto = DescripciontextBox.Text;

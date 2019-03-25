@@ -4,9 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Odbc;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+
 
 namespace GestionDeInventario.Entidades
 {
@@ -160,6 +163,37 @@ namespace GestionDeInventario.Entidades
 
 
 
+        }
+        OleDbConnection conn;
+        OleDbDataAdapter dbDataAdapter;
+        DataTable dataTable;
+        public void Exportar(DataGridView dgv,string nombrehoja)
+        {
+            string ruta = "";
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "Excel File |*.xlsx";
+                ofd.Title = "Seleccione el Archivo";
+                if(ofd.ShowDialog() == DialogResult.OK)
+                {
+                    if (ofd.FileName.Equals("") == false)
+                    {
+                        ruta = ofd.FileName;
+                    }
+                }
+                conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=" + ruta + ";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
+                dbDataAdapter = new OleDbDataAdapter("Select * from [" + nombrehoja + "$]", conn);
+                dataTable = new DataTable();
+                dbDataAdapter.Fill(dataTable);
+                dgv.DataSource = dataTable;
+
+            }catch(Exception e)
+            {
+                Console.Write(e.ToString());
+            }
+
+            
         }
     }
 }

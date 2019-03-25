@@ -40,7 +40,7 @@ namespace GestionDeInventario.UI
 
         }
 
-     
+
 
         private void controlDeInventarioToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -54,6 +54,27 @@ namespace GestionDeInventario.UI
             MantenimientoProvedores mantenimientoProvedores = new MantenimientoProvedores();
             mantenimientoProvedores.Show();
             mantenimientoProvedores.MdiParent = this;
+        }
+
+        private void consultaProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BuscarProducto buscarProducto = new BuscarProducto();
+            buscarProducto.Show();
+            buscarProducto.MdiParent = this;
+        }
+
+        private void consultaProvedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BuscarProvedor buscarProvedor = new BuscarProvedor();
+            buscarProvedor.Show();
+            buscarProvedor.MdiParent = this;
+        }
+
+        private void importarIventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IportarInventario ip = new IportarInventario();
+            ip.Show();
+            ip.MdiParent = this;
         }
     }
 }

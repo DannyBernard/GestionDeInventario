@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -67,6 +70,18 @@
     <Compile Include="Entidades\Provedores.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="DAL\DataDB.cs" />
+    <Compile Include="IportarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IportarInventario.Designer.cs">
+      <DependentUpon>IportarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ProductoReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductoReporte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\BuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +138,13 @@
     <Compile Include="UI\PanelPrincipal.Designer.cs">
       <DependentUpon>PanelPrincipal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="IportarInventario.resx">
+      <DependentUpon>IportarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ProductoReporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProductoReporte.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\BuscarProducto.resx">
       <DependentUpon>BuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,5 +254,9 @@
   <ItemGroup>
     <None Include="Resources\icons8-plus-math-48.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
