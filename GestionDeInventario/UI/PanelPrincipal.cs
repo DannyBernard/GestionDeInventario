@@ -76,5 +76,12 @@ namespace GestionDeInventario.UI
             ip.Show();
             ip.MdiParent = this;
         }
+
+        private void productosBajoEnStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteProductosbajo_en_stock reporte = new ReporteProductosbajo_en_stock();
+            reporte.Show();
+
+        }
     }
 }
