@@ -67,6 +67,7 @@
             this.BuscarProductobutton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Buscarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CodigoProductonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
@@ -323,6 +324,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Buscarbutton);
             this.groupBox1.Controls.Add(this.Nuevobutton);
             this.groupBox1.Controls.Add(this.Guardarbutton);
             this.groupBox1.Location = new System.Drawing.Point(25, 508);
@@ -337,7 +339,7 @@
             this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Nuevobutton.ForeColor = System.Drawing.SystemColors.Control;
             this.Nuevobutton.Image = global::GestionDeInventario.Properties.Resources.icons8_agregar_propiedad_501;
-            this.Nuevobutton.Location = new System.Drawing.Point(374, 12);
+            this.Nuevobutton.Location = new System.Drawing.Point(204, 11);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 73);
             this.Nuevobutton.TabIndex = 13;
@@ -349,7 +351,7 @@
             this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Guardarbutton.ForeColor = System.Drawing.SystemColors.Control;
             this.Guardarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_guardar_501;
-            this.Guardarbutton.Location = new System.Drawing.Point(479, 11);
+            this.Guardarbutton.Location = new System.Drawing.Point(408, 13);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 73);
             this.Guardarbutton.TabIndex = 14;
@@ -441,6 +443,18 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buscarbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Buscarbutton.Image = global::GestionDeInventario.Properties.Resources.icons8_búsqueda_501;
+            this.Buscarbutton.Location = new System.Drawing.Point(560, 21);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(100, 57);
+            this.Buscarbutton.TabIndex = 29;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click_1);
+            // 
             // ControlIvenariocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -518,5 +532,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn almacenDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoIventarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource detalleIventarioBindingSource;
+        private System.Windows.Forms.Button Buscarbutton;
     }
 }

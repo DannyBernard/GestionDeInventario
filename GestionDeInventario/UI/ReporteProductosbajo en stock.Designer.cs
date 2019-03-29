@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Imprimirbutton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.codigoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +38,8 @@
             this.provedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDeVencimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
@@ -74,30 +74,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(750, 283);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // Imprimirbutton
-            // 
-            this.Imprimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Imprimirbutton.ForeColor = System.Drawing.SystemColors.Control;
-            this.Imprimirbutton.Image = global::GestionDeInventario.Properties.Resources.printer_78349;
-            this.Imprimirbutton.Location = new System.Drawing.Point(638, 475);
-            this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(116, 45);
-            this.Imprimirbutton.TabIndex = 3;
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
-            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Image = global::GestionDeInventario.Properties.Resources.clipboard__1_;
-            this.button1.Location = new System.Drawing.Point(240, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 82);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // codigoProductoDataGridViewTextBoxColumn
             // 
@@ -138,6 +114,30 @@
             // productoBindingSource
             // 
             this.productoBindingSource.DataSource = typeof(GestionDeInventario.Entidades.Producto);
+            // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Imprimirbutton.ForeColor = System.Drawing.SystemColors.Control;
+            this.Imprimirbutton.Image = global::GestionDeInventario.Properties.Resources.printer_78349;
+            this.Imprimirbutton.Location = new System.Drawing.Point(638, 475);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(116, 45);
+            this.Imprimirbutton.TabIndex = 3;
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Image = global::GestionDeInventario.Properties.Resources.clipboard__1_;
+            this.button1.Location = new System.Drawing.Point(240, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 82);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 

@@ -12,29 +12,30 @@ using System.Windows.Forms;
 
 namespace GestionDeInventario.UI
 {
-    public partial class ReporteProductosbajo_en_stock : Form
+    public partial class ReporteVencimiento : Form
     {
-        public ReporteProductosbajo_en_stock()
+        public ReporteVencimiento()
         {
             InitializeComponent();
+            
         }
 
-        public void LlenaData() { 
-
-
-            DetalleIventario p = new DetalleIventario();
-            dataGridView1.DataSource = p.Buscar();
+        public void LlenarGrip()
+        {
+            Producto p = new Producto();
+            dataGridView1.DataSource = p.ProductoAVencer();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LlenaData();
+            LlenarGrip();
+
         }
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-            ImprimirRporte1 i = new ImprimirRporte1();
-            i.Show();
+            ImprimirReporte2 ir = new ImprimirReporte2();
+            ir.Show();
         }
     }
 }

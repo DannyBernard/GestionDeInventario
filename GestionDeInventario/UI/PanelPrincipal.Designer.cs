@@ -40,7 +40,10 @@
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaProvedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreNosotrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productoProximoAVencerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.auditoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +76,7 @@
             // 
             this.productoToolStripMenuItem.Image = global::GestionDeInventario.Properties.Resources.shopping_basket_add256_24909;
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.productoToolStripMenuItem.Text = "Producto";
             this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
@@ -81,7 +84,7 @@
             // 
             this.provedoresToolStripMenuItem.Image = global::GestionDeInventario.Properties.Resources.new_add_user_info_16706;
             this.provedoresToolStripMenuItem.Name = "provedoresToolStripMenuItem";
-            this.provedoresToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.provedoresToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.provedoresToolStripMenuItem.Text = "Provedores";
             this.provedoresToolStripMenuItem.Click += new System.EventHandler(this.provedoresToolStripMenuItem_Click);
             // 
@@ -89,7 +92,8 @@
             // 
             this.herramientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.controlDeInventarioToolStripMenuItem,
-            this.importarIventarioToolStripMenuItem});
+            this.importarIventarioToolStripMenuItem,
+            this.auditoriaToolStripMenuItem});
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
             this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
             this.herramientasToolStripMenuItem.Text = "Herramientas";
@@ -111,7 +115,8 @@
             // repotesToolStripMenuItem
             // 
             this.repotesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productosBajoEnStockToolStripMenuItem});
+            this.productosBajoEnStockToolStripMenuItem,
+            this.productoProximoAVencerToolStripMenuItem});
             this.repotesToolStripMenuItem.Name = "repotesToolStripMenuItem";
             this.repotesToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.repotesToolStripMenuItem.Text = "Repotes ";
@@ -119,7 +124,7 @@
             // productosBajoEnStockToolStripMenuItem
             // 
             this.productosBajoEnStockToolStripMenuItem.Name = "productosBajoEnStockToolStripMenuItem";
-            this.productosBajoEnStockToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.productosBajoEnStockToolStripMenuItem.Size = new System.Drawing.Size(265, 26);
             this.productosBajoEnStockToolStripMenuItem.Text = "Productos Bajo en stock";
             this.productosBajoEnStockToolStripMenuItem.Click += new System.EventHandler(this.productosBajoEnStockToolStripMenuItem_Click);
             // 
@@ -127,7 +132,8 @@
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultaProductoToolStripMenuItem,
-            this.consultaProvedorToolStripMenuItem});
+            this.consultaProvedorToolStripMenuItem,
+            this.consultaInventarioToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -135,22 +141,43 @@
             // consultaProductoToolStripMenuItem
             // 
             this.consultaProductoToolStripMenuItem.Name = "consultaProductoToolStripMenuItem";
-            this.consultaProductoToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.consultaProductoToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.consultaProductoToolStripMenuItem.Text = "Consulta Producto";
             this.consultaProductoToolStripMenuItem.Click += new System.EventHandler(this.consultaProductoToolStripMenuItem_Click);
             // 
             // consultaProvedorToolStripMenuItem
             // 
             this.consultaProvedorToolStripMenuItem.Name = "consultaProvedorToolStripMenuItem";
-            this.consultaProvedorToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.consultaProvedorToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.consultaProvedorToolStripMenuItem.Text = "Consulta Provedor";
             this.consultaProvedorToolStripMenuItem.Click += new System.EventHandler(this.consultaProvedorToolStripMenuItem_Click);
+            // 
+            // consultaInventarioToolStripMenuItem
+            // 
+            this.consultaInventarioToolStripMenuItem.Name = "consultaInventarioToolStripMenuItem";
+            this.consultaInventarioToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.consultaInventarioToolStripMenuItem.Text = "Consulta Inventario";
+            this.consultaInventarioToolStripMenuItem.Click += new System.EventHandler(this.consultaInventarioToolStripMenuItem_Click);
             // 
             // sobreNosotrosToolStripMenuItem
             // 
             this.sobreNosotrosToolStripMenuItem.Name = "sobreNosotrosToolStripMenuItem";
             this.sobreNosotrosToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
             this.sobreNosotrosToolStripMenuItem.Text = "SobreNosotros";
+            // 
+            // productoProximoAVencerToolStripMenuItem
+            // 
+            this.productoProximoAVencerToolStripMenuItem.Name = "productoProximoAVencerToolStripMenuItem";
+            this.productoProximoAVencerToolStripMenuItem.Size = new System.Drawing.Size(265, 26);
+            this.productoProximoAVencerToolStripMenuItem.Text = "Producto Proximo A Vencer";
+            this.productoProximoAVencerToolStripMenuItem.Click += new System.EventHandler(this.productoProximoAVencerToolStripMenuItem_Click);
+            // 
+            // auditoriaToolStripMenuItem
+            // 
+            this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
+            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.auditoriaToolStripMenuItem.Text = "Auditoria";
+            this.auditoriaToolStripMenuItem.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
             // 
             // PanelPrincipal
             // 
@@ -183,5 +210,8 @@
         private System.Windows.Forms.ToolStripMenuItem consultaProvedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importarIventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosBajoEnStockToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaInventarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productoProximoAVencerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem auditoriaToolStripMenuItem;
     }
 }

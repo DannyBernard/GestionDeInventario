@@ -78,5 +78,52 @@ namespace GestionDeInventario.Entidades
 
         }
 
+        public Iventario Buscarp(int id)
+        {
+          
+            MySqlConnection conn = getConnection();
+            conn.Open();
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoIventario,TipoDeInvetario FROM Invetario WHERE CodigoIventario={0}", id), conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+           
+                this.CodigoInvetario = reader.GetInt32(0);
+                this.TipoDeIventario = reader.GetString(1);
+             }
+            conn.Close();
+            return this;
+        }
+
+        public bool Buscar(int id)
+        {
+            bool paso = false;
+            StringBuilder sql = new StringBuilder();
+
+            MySqlCommand command;
+
+            sql.AppendFormat("select CodigoIventario,TipoDeInvetario from Invetario where CodigoIventario ={0} ", id);
+
+            MySqlConnection conn = getConnection();
+            command = new MySqlCommand(sql.ToString(), conn);
+            conn.Open();
+            MySqlDataReader dataReader = command.ExecuteReader();
+            if (dataReader.HasRows)
+            {
+                if (dataReader.Read())
+                {
+                    this.CodigoInvetario = Convert.ToInt32(dataReader["CodigoIventario"]);
+                    this.TipoDeIventario = Convert.ToString(dataReader["TipoDeInvetario"]);
+                   
+                    //this.Inactivo = Convert.ToByte(dataReader["Inactivo"]);
+
+                }
+                conn.Close();
+                return true;
+            }
+
+            return paso;
+        }
+
     }
 }

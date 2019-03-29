@@ -59,11 +59,11 @@ namespace GestionDeInventario.UI
         public void LlenaCampo(Iventario iventario)
         {
             Iventario inventario = new Iventario();
-
+            DetalleIventario di = new DetalleIventario();
             ObservaciontextBox.Text = iventario.Obsevacion;
             ObservaciontextBox.Text = iventario.TipoDeIventario;
 
-            lista.Add(LlenarDetalle());
+            lista.Add(LlenarDetalle(di));
 
 
         }
@@ -75,9 +75,9 @@ namespace GestionDeInventario.UI
                 MessageBox.Show("Revise Sus Campos");
                 return;
             }
-           
+            DetalleIventario di = new DetalleIventario();
 
-            lista.Add(LlenarDetalle());
+            lista.Add(LlenarDetalle(di));
             ActualizarGrid();
             // Nuevo();
         }
@@ -116,20 +116,20 @@ namespace GestionDeInventario.UI
                     MessageBox.Show("Guardo");
                 }
             }
-        
-    }
 
-        public DetalleIventario LlenarDetalle()
+        }
+
+        public DetalleIventario LlenarDetalle( DetalleIventario detalleIventario)
         {
             Iventario inventario = new Iventario();
-            DetalleIventario detalleIventario = new DetalleIventario();
+          //  DetalleIventario detalleIventario = new DetalleIventario();
             DataTable dt = new DataTable();
 
             // DetalleIventario detalleIventario = new DetalleIventario();
             dt = foreingk();
-           
-              id = inventario.CodigoInvetario = int.Parse(dt.Rows[0][0].ToString());
-            
+
+            id = inventario.CodigoInvetario = int.Parse(dt.Rows[0][0].ToString());
+
 
             detalleIventario.CodigoProducto = Convert.ToInt32(CodigoProductonumericUpDown.Value);
             detalleIventario.DescripcionDelProducto = DescripciontextBox.Text;
@@ -137,22 +137,23 @@ namespace GestionDeInventario.UI
             detalleIventario.Precio = Convert.ToSingle(PrecionumericUpDown.Value);
             detalleIventario.Gondola = GondolacomboBox.Text;
             detalleIventario.Almacen = AlmacencomboBox.Text;
-            detalleIventario.CodigoIventario = id+1;
-           
-      
+            detalleIventario.CodigoIventario = id + 1;
+
+
 
             return detalleIventario;
 
         }
-
+        /*
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             Iventario iventario = new Iventario();
             DetalleIventario detalleIventario = new DetalleIventario();
             int id = Convert.ToInt32(CodigoProductonumericUpDown.Value);
-            dataGridView1.DataSource = detalleIventario.Buscar(id);
+            dataGridView1.DataSource = detalleIventario.Buscar();
             LlenaCampo(iventario);
         }
+        */
         private void Llenacampo(Producto producto)
         {
             CodigoProductonumericUpDown.Value = Convert.ToInt32(producto.CodigoProducto);
@@ -225,6 +226,21 @@ namespace GestionDeInventario.UI
         {
             Nuevo();
             dataGridView1.DataSource = null;
+        }
+
+        private void Buscarbutton_Click_1(object sender, EventArgs e)
+        {
+            DetalleIventario di = new DetalleIventario();
+            BuscarIventario bi = new BuscarIventario();
+            Iventario i = new Iventario();
+            bi.ShowDialog();
+            if(bi.Seleccion != null)
+            {
+                int id = bi.Seleccion.CodigoIventario;
+                di.Buscarb(id);
+                dataGridView1.DataSource = di.Buscarb(id);
+                LlenaCampo(i);
+            }
         }
     }
 }

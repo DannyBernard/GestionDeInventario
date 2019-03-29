@@ -47,7 +47,7 @@ namespace GestionDeInventario.Entidades
             Almacen = almacen;
             CodigoIventario = codigoIventario;
         }
-         public DataTable foreign()
+        public DataTable foreign()
         {
             DataTable dt = new DataTable();
 
@@ -55,16 +55,17 @@ namespace GestionDeInventario.Entidades
             {
 
 
-               
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 MySqlConnection conn = getConnection();
-               
+
                 conn.Open();
-                adapter = new MySqlDataAdapter ("select MAX (CodigoIventario) from Invetario", conn);
+                adapter = new MySqlDataAdapter("select MAX (CodigoIventario) from Invetario", conn);
                 adapter.Fill(dt);
-               conn.Close();
-               
-            }catch(Exception e)
+                conn.Close();
+
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             }
@@ -79,8 +80,8 @@ namespace GestionDeInventario.Entidades
             MySqlCommand command;
             foreach (var item in detalleIventarios)
             {
-            ;
-                string sqlInsert = "INSERT IventarioProducto (CodigoIventarioProducto,CodigoProducto,Cantidad,Precio,DescripcionDelProducto,Almacen,Gondola,CodigoIventario)VALUES(@CodigoIventarioProducto,@CodigoProducto,@Cantidad,@Precio,@DescripcionDelProducto,@Almacen,@Gondola,@CodigoIventario)";
+                ;
+                string sqlInsert = "INSERT Into IventarioProducto (CodigoIventarioProducto,CodigoProducto,Cantidad,Precio,DescripcionDelProducto,Almacen,Gondola,CodigoIventario)VALUES(@CodigoIventarioProducto,@CodigoProducto,@Cantidad,@Precio,@DescripcionDelProducto,@Almacen,@Gondola,@CodigoIventario)";
                 MySqlConnection conn = getConnection();
                 conn.Open();
                 command = new MySqlCommand(sqlInsert, conn);
@@ -92,7 +93,7 @@ namespace GestionDeInventario.Entidades
                 command.Parameters.AddWithValue("@DescripcionDelProducto", item.DescripcionDelProducto);
                 command.Parameters.AddWithValue("@Almacen", item.Almacen);
                 command.Parameters.AddWithValue("@Gondola", item.Gondola);
-                command.Parameters.AddWithValue("@CodigoIventario",item.CodigoIventario);
+                command.Parameters.AddWithValue("@CodigoIventario", item.CodigoIventario);
                 // command.Parameters.AddWithValue("@Inactivo", Convert.ToByte(0));
 
                 command.Prepare();
@@ -132,33 +133,63 @@ namespace GestionDeInventario.Entidades
             }
             return false;
         }
+        public bool Modificara()
+        {
+            bool paso = false;
 
-        public List<DetalleIventario> Buscar(int id)
+            StringBuilder sql = new StringBuilder();
+           
+                MySqlConnection conn = getConnection();
+                conn.Open();
+                MySqlCommand sqlCommand;
+                sqlCommand = new MySqlCommand();
+
+                sql.AppendFormat("UPDATE IventarioProducto set CodigoProducto={0},Cantidad={1},DescripcionDelProducto='{2}',Almacen='{4}',Gondola='{3}' Where CodigoIventario ={5} ", this.CodigoProducto, this.Cantidad,  this.DescripcionDelProducto,this.Almacen, this.Gondola,this.CodigoIventario);
+                sqlCommand.Connection = conn;
+                sqlCommand.CommandType = System.Data.CommandType.Text;
+                sqlCommand.CommandText = sql.ToString();
+                if (sqlCommand.ExecuteNonQuery() > 0)
+                {
+                    conn.Close();
+                    return true;
+
+                }
+                else
+                {
+                    conn.Close();
+                    return false;
+                }
+            
+            return false;
+        }
+
+        public DetalleIventario Buscar()
         {
             List<DetalleIventario> lista = new List<DetalleIventario>();
             MySqlConnection conn = getConnection();
-
+            DetalleIventario d = new DetalleIventario();
             conn.Open();
-           
-            
-                MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoIventarioProducto,CodigoProducto,Cantidad,Precio,DescripcionDelProducto,Almacen,Gondola FROM IventarioProducto WHERE CodigoIventario ", id), conn);
-                MySqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                DetalleIventario d = new DetalleIventario();
 
-                    d.CodigoIventarioProducto = reader.GetInt32(0);
-                    d.CodigoProducto = reader.GetInt32(1);
-                    d.Cantidad = reader.GetInt32(2);
-                    d.Precio = reader.GetFloat(3);
-                    d.DescripcionDelProducto = reader.GetString(4);
-                    d.Gondola = reader.GetString(5);
-                    d.Almacen = reader.GetString(6);
+
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoIventarioProducto,CodigoProducto,Cantidad,Precio,DescripcionDelProducto,Almacen,Gondola,CodigoIventario FROM IventarioProducto "), conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+               // DetalleIventario d = new DetalleIventario();
+
+                d.CodigoIventarioProducto = reader.GetInt32(0);
+                d.CodigoProducto = reader.GetInt32(1);
+                d.Cantidad = reader.GetInt32(2);
+                d.Precio = reader.GetFloat(3);
+                d.DescripcionDelProducto = reader.GetString(4);
+                d.Gondola = reader.GetString(5);
+                d.Almacen = reader.GetString(6);
+                d.CodigoIventario = reader.GetInt32(7);
 
                 lista.Add(d);
-                }
-                conn.Close();
-                 return lista;
+            }
+            conn.Close();
+            return d;
 
 
 
@@ -167,7 +198,7 @@ namespace GestionDeInventario.Entidades
         OleDbConnection conn;
         OleDbDataAdapter dbDataAdapter;
         DataTable dataTable;
-        public void Exportar(DataGridView dgv,string nombrehoja)
+        public void Exportar(DataGridView dgv, string nombrehoja)
         {
             string ruta = "";
             try
@@ -175,7 +206,7 @@ namespace GestionDeInventario.Entidades
                 OpenFileDialog ofd = new OpenFileDialog();
                 ofd.Filter = "Excel File |*.xlsx";
                 ofd.Title = "Seleccione el Archivo";
-                if(ofd.ShowDialog() == DialogResult.OK)
+                if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     if (ofd.FileName.Equals("") == false)
                     {
@@ -188,12 +219,116 @@ namespace GestionDeInventario.Entidades
                 dbDataAdapter.Fill(dataTable);
                 dgv.DataSource = dataTable;
 
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Console.Write(e.ToString());
             }
 
-            
+
+        }
+        public List<DetalleIventario> Buscarb(int id)
+        {
+            DetalleIventario d = new DetalleIventario();
+            MySqlConnection conn = getConnection();
+            List<DetalleIventario> lista = new List<DetalleIventario>();
+
+            conn.Open();
+
+
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoIventarioProducto,CodigoProducto,Cantidad,Precio,DescripcionDelProducto,Almacen,Gondola,CodigoIventario FROM IventarioProducto where CodigoIventario ={0}  ", id), conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                // DetalleIventario d = new DetalleIventario();
+
+                d.CodigoIventarioProducto = reader.GetInt32(0);
+                d.CodigoProducto = reader.GetInt32(1);
+                d.Cantidad = reader.GetInt32(2);
+                d.Precio = reader.GetFloat(3);
+                d.DescripcionDelProducto = reader.GetString(4);
+                d.Gondola = reader.GetString(5);
+                d.Almacen = reader.GetString(6);
+                d.CodigoIventario = reader.GetInt32(7);
+
+                lista.Add(d);
+
+            }
+            conn.Close();
+            return lista;
+
+
+
+
+        }
+        public DetalleIventario BuscarA(int id)
+        {
+            DetalleIventario d = new DetalleIventario();
+            MySqlConnection conn = getConnection();
+            List<DetalleIventario> lista = new List<DetalleIventario>();
+
+            conn.Open();
+
+
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoProducto,Cantidad,Precio,DescripcionDelProducto,Almacen,Gondola,CodigoIventario FROM IventarioProducto where CodigoIventario ={0}  ", id), conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                // DetalleIventario d = new DetalleIventario();
+
+               // d.CodigoIventarioProducto = reader.GetInt32(0);
+               this.CodigoProducto = reader.GetInt32(0);
+                this.Cantidad = reader.GetInt32(1);
+                this.Precio = reader.GetFloat(2);
+                this.DescripcionDelProducto = reader.GetString(3);
+                this.Gondola = reader.GetString(4);
+                this.Almacen = reader.GetString(5);
+                this.CodigoIventario = reader.GetInt32(6);
+
+               // lista.Add(d);
+
+            }
+            conn.Close();
+            return this;
+
+
+
+
+        }
+
+        public List<DetalleIventario> Buscarp()
+        {
+            DetalleIventario d = new DetalleIventario();
+            MySqlConnection conn = getConnection();
+            List<DetalleIventario> lista = new List<DetalleIventario>();
+
+            conn.Open();
+
+
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoIventarioProducto,CodigoProducto,Cantidad,Precio,DescripcionDelProducto,Almacen,Gondola,CodigoIventario FROM IventarioProducto "), conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                // DetalleIventario d = new DetalleIventario();
+
+                d.CodigoIventarioProducto = reader.GetInt32(0);
+                d.CodigoProducto = reader.GetInt32(1);
+                d.Cantidad = reader.GetInt32(2);
+                d.Precio = reader.GetFloat(3);
+                d.DescripcionDelProducto = reader.GetString(4);
+                d.Gondola = reader.GetString(5);
+                d.Almacen = reader.GetString(6);
+                d.CodigoIventario = reader.GetInt32(7);
+
+                lista.Add(d);
+
+            }
+            conn.Close();
+            return lista;
+
+
+
+
         }
     }
 }

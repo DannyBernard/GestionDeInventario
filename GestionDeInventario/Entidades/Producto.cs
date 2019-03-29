@@ -230,7 +230,7 @@ namespace GestionDeInventario.Entidades
            List< Producto> lista = new List<Producto>();
             MySqlConnection conn = getConnection();
             conn.Open();
-            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Precio, Cantidad, Provedor, FechaVencimiento FROM Producto WHERE Descripcion='{0}'like'%"  +Desc+ "%'",Desc), conn);
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion, Precio, Cantidad, Provedor, FechaVencimiento FROM Producto WHERE Descripcion='{0}" ,Desc), conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -280,6 +280,36 @@ namespace GestionDeInventario.Entidades
             }
             conn.Close();
             return lista;
+        }
+        public List<Producto> ProductoAVencer()
+        {
+            List<Producto> lista = new List<Producto>();
+            MySqlConnection conn = getConnection();
+            conn.Open();
+
+            MySqlCommand command;
+            //command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion,Precio ,Cantidad,  Provedor, FechaVencimiento FROM Producto where Producto <>"), conn);
+
+            // SELECT* FROM Productos WHERE DATEDIFF(days, GetDate(), FechaVencimiento) <= 10
+            command = new MySqlCommand(string.Format("SELECT CodigoProducto, Descripcion,Precio ,Cantidad,  Provedor, FechaVencimiento FROM Producto where date_sub(FechaVencimiento, interval 10 day) <= curdate()"), conn);
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Producto producto = new Producto();
+                producto.CodigoProducto = reader.GetInt32(0);
+                producto.Descripcion = reader.GetString(1);
+                producto.Precio = reader.GetFloat(2);
+                producto.Cantidad = reader.GetInt32(3);
+                producto.Provedor = reader.GetString(4);
+                producto.FechaDeVencimiento = reader.GetDateTime(5);
+
+                lista.Add(producto);
+
+            }
+            conn.Close();
+            return lista;
+
         }
     }
 }

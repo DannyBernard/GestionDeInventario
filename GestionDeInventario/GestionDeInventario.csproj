@@ -80,6 +80,18 @@
     <Compile Include="IportarInventario.Designer.cs">
       <DependentUpon>IportarInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ImprimirReporte2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ImprimirReporte2.Designer.cs">
+      <DependentUpon>ImprimirReporte2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ImprimirRporte1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,11 +104,23 @@
       <DependentUpon>ProductoReporte.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\VecimientoCrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VecimientoCrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\Auditoria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Auditoria.Designer.cs">
       <DependentUpon>Auditoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BuscarIventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BuscarIventario.Designer.cs">
+      <DependentUpon>BuscarIventario.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\BuscarProducto.cs">
       <SubType>Form</SubType>
@@ -160,8 +184,21 @@
     <Compile Include="UI\ReporteProductosbajo en stock.Designer.cs">
       <DependentUpon>ReporteProductosbajo en stock.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ReporteVencimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ReporteVencimiento.Designer.cs">
+      <DependentUpon>ReporteVencimiento.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="IportarInventario.resx">
       <DependentUpon>IportarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ImprimirReporte2.resx">
+      <DependentUpon>ImprimirReporte2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ImprimirRporte1.resx">
       <DependentUpon>ImprimirRporte1.cs</DependentUpon>
@@ -170,8 +207,15 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ProductoReporte.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\VecimientoCrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VecimientoCrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Auditoria.resx">
       <DependentUpon>Auditoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BuscarIventario.resx">
+      <DependentUpon>BuscarIventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\BuscarProducto.resx">
       <DependentUpon>BuscarProducto.cs</DependentUpon>
@@ -212,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ReporteProductosbajo en stock.resx">
       <DependentUpon>ReporteProductosbajo en stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ReporteVencimiento.resx">
+      <DependentUpon>ReporteVencimiento.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\GestionDeInventario.Entidades.DetalleCompra.datasource" />

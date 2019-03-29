@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.CodigoIventarionumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
+            this.CodigoIventarionumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.CodigoProductonumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,22 +69,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo Inventario";
-            // 
-            // CodigoIventarionumericUpDown
-            // 
-            this.CodigoIventarionumericUpDown.Location = new System.Drawing.Point(167, 42);
-            this.CodigoIventarionumericUpDown.Name = "CodigoIventarionumericUpDown";
-            this.CodigoIventarionumericUpDown.Size = new System.Drawing.Size(120, 22);
-            this.CodigoIventarionumericUpDown.TabIndex = 1;
-            // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -95,6 +79,23 @@
             this.button1.Size = new System.Drawing.Size(97, 61);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // CodigoIventarionumericUpDown
+            // 
+            this.CodigoIventarionumericUpDown.Location = new System.Drawing.Point(167, 42);
+            this.CodigoIventarionumericUpDown.Name = "CodigoIventarionumericUpDown";
+            this.CodigoIventarionumericUpDown.Size = new System.Drawing.Size(120, 22);
+            this.CodigoIventarionumericUpDown.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Codigo Inventario";
             // 
             // label
             // 
@@ -131,6 +132,11 @@
             // CantidadActualnumericUpDown
             // 
             this.CantidadActualnumericUpDown.Location = new System.Drawing.Point(203, 232);
+            this.CantidadActualnumericUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.CantidadActualnumericUpDown.Name = "CantidadActualnumericUpDown";
             this.CantidadActualnumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.CantidadActualnumericUpDown.TabIndex = 6;
@@ -171,6 +177,7 @@
             this.button2.Size = new System.Drawing.Size(75, 73);
             this.button2.TabIndex = 9;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
@@ -193,6 +200,7 @@
             this.button3.Size = new System.Drawing.Size(75, 63);
             this.button3.TabIndex = 10;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // AlmacentextBox
             // 

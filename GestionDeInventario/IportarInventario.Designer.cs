@@ -48,13 +48,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.detalleIventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.detalleIventarioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.detalleIventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigoRegistronumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -244,10 +246,7 @@
             this.Guardarbutton.Size = new System.Drawing.Size(75, 73);
             this.Guardarbutton.TabIndex = 14;
             this.Guardarbutton.UseVisualStyleBackColor = true;
-            // 
-            // detalleIventarioBindingSource
-            // 
-            this.detalleIventarioBindingSource.DataSource = typeof(GestionDeInventario.Entidades.DetalleIventario);
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // groupBox2
             // 
@@ -258,6 +257,14 @@
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Importar";
+            // 
+            // detalleIventarioBindingSource1
+            // 
+            this.detalleIventarioBindingSource1.DataSource = typeof(GestionDeInventario.Entidades.DetalleIventario);
+            // 
+            // detalleIventarioBindingSource
+            // 
+            this.detalleIventarioBindingSource.DataSource = typeof(GestionDeInventario.Entidades.DetalleIventario);
             // 
             // IportarInventario
             // 
@@ -285,8 +292,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigoRegistronumericUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleIventarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,5 +323,6 @@
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.BindingSource detalleIventarioBindingSource1;
     }
 }

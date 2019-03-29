@@ -1,6 +1,6 @@
 ﻿namespace GestionDeInventario.Reportes
 {
-    partial class ImprimirRporte1
+    partial class ImprimirReporte2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.vecimientoCrystalReport11 = new GestionDeInventario.Reportes.VecimientoCrystalReport1();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.ProductoReporte1 = new GestionDeInventario.Reportes.ProductoReporte();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,26 +40,24 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1286, 597);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.ParameterPanel;
             // 
-            // ImprimirRporte1
+            // ImprimirReporte2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 597);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "ImprimirRporte1";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.Text = "ImprimirRporte1";
+            this.Name = "ImprimirReporte2";
+            this.Text = "ImprimirReporte2";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private VecimientoCrystalReport1 vecimientoCrystalReport11;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private ProductoReporte ProductoReporte1;
     }
 }

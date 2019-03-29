@@ -83,5 +83,23 @@ namespace GestionDeInventario.UI
             reporte.Show();
 
         }
+
+        private void consultaInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BuscarIventario bi = new BuscarIventario();
+            bi.Show();
+        }
+
+        private void productoProximoAVencerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteVencimiento rv = new ReporteVencimiento();
+            rv.Show();
+        }
+
+        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Auditoria a = new Auditoria();
+            a.Show();
+        }
     }
 }
